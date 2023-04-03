@@ -278,9 +278,9 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Home" image="house.fill" catalog="system" id="zYc-Lf-Deh"/>
-                                    <tabBarItem title="Categories" image="tray.2.fill" catalog="system" selectedImage="tray.2" id="HrL-WA-jf0"/>
+                                    <tabBarItem title="Categories" image="list.bullet" catalog="system" id="HrL-WA-jf0"/>
                                     <tabBarItem title="Add" image="plus.app.fill" catalog="system" id="WH0-vS-Ccc"/>
-                                    <tabBarItem title="Settings" image="gearshape.fill" catalog="system" id="13h-rw-9eG"/>
+                                    <tabBarItem title="Bids" image="stopwatch.fill" catalog="system" id="13h-rw-9eG"/>
                                     <tabBarItem title="Profile" image="person.fill" catalog="system" id="2d3-9z-bvm"/>
                                 </items>
                             </tabBar>
@@ -863,12 +863,13 @@
     </scenes>
     <resources>
         <image name="checkmark.seal" catalog="system" width="128" height="124"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="hammer.circle" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.app.fill" catalog="system" width="128" height="114"/>
+        <image name="stopwatch.fill" catalog="system" width="121" height="128"/>
         <image name="tray.2" catalog="system" width="128" height="115"/>
         <image name="tray.2.fill" catalog="system" width="128" height="115"/>
         <image name="wqewq56" width="826" height="826"/>
