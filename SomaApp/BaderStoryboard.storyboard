@@ -94,7 +94,9 @@
                         <viewLayoutGuide key="safeArea" id="Id7-7L-svy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Izw-4C-dJB"/>
                     <navigationItem key="navigationItem" title="Item" id="uLz-S0-CZh"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERv-Eb-Car" sceneMemberID="firstResponder"/>
             </objects>
@@ -264,7 +266,7 @@
             </objects>
             <point key="canvasLocation" x="927" y="4"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="e0k-cM-UWb">
             <objects>
                 <viewController id="poB-3c-306" sceneMemberID="viewController">
@@ -273,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9vJ-AO-jMP">
-                                <rect key="frame" x="0.0" y="849" width="430" height="49"/>
+                                <rect key="frame" x="0.0" y="849" width="429" height="48"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -288,9 +290,11 @@
                         <viewLayoutGuide key="safeArea" id="zk5-gd-g8b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="6eB-Y0-91M"/>
                     <navigationItem key="navigationItem" id="6Dn-XB-cTg">
                         <barButtonItem key="rightBarButtonItem" title="favorites" image="heart.fill" catalog="system" id="E7G-g9-agj"/>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcL-Tf-zNA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,7 +556,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cQ-JP-EP8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cQ-JP-EP8">
                                                     <rect key="frame" x="20" y="9" width="64.666666666666671" height="60"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -625,7 +629,7 @@
                                 </constraints>
                             </imageView>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUn-bO-wIz">
-                                <rect key="frame" x="0.0" y="849" width="430" height="49"/>
+                                <rect key="frame" x="0.0" y="849" width="430" height="48"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -814,7 +818,7 @@
                                 </constraints>
                             </imageView>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fyc-Fr-pg1">
-                                <rect key="frame" x="0.0" y="406" width="430" height="51"/>
+                                <rect key="frame" x="0.0" y="405" width="430" height="51"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
