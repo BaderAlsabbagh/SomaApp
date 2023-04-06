@@ -66,6 +66,52 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Trending Categories" id="dEb-oS-UBq">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="400" id="qT7-nh-A99">
+                                        <rect key="frame" x="0.0" y="705" width="430" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qT7-nh-A99" id="Mq8-9V-bTR">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o7n-fy-sLY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-S0-Mx8">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Button" image="Image 3"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5q-fV-0fO">
+                                                    <rect key="frame" x="230" y="0.0" width="200" height="400"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E76-Lo-J7t">
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
+                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                            <state key="normal" title="Button" image="Image 2"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.6580600472" green="0.7153767231" blue="0.78348186760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="E5q-fV-0fO" firstAttribute="leading" secondItem="o7n-fy-sLY" secondAttribute="trailing" constant="30" id="1wS-YD-ukT"/>
+                                                <constraint firstItem="E5q-fV-0fO" firstAttribute="top" secondItem="Mq8-9V-bTR" secondAttribute="top" id="lBY-Am-XeE"/>
+                                                <constraint firstItem="o7n-fy-sLY" firstAttribute="leading" secondItem="Mq8-9V-bTR" secondAttribute="leading" id="ljs-dA-Tbh"/>
+                                                <constraint firstItem="o7n-fy-sLY" firstAttribute="top" secondItem="Mq8-9V-bTR" secondAttribute="top" id="mgQ-ux-4en"/>
+                                                <constraint firstAttribute="trailing" secondItem="E5q-fV-0fO" secondAttribute="trailing" id="tpr-zu-xLp"/>
+                                                <constraint firstAttribute="bottom" secondItem="o7n-fy-sLY" secondAttribute="bottom" id="tws-HX-qB8"/>
+                                                <constraint firstItem="E5q-fV-0fO" firstAttribute="leading" secondItem="Mq8-9V-bTR" secondAttribute="leading" constant="230" id="vv5-ns-Vhs"/>
+                                                <constraint firstAttribute="bottom" secondItem="E5q-fV-0fO" secondAttribute="bottom" id="xoH-bj-ddf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.70791613259999997" green="0.9467958393" blue="0.8745857802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="eNU-wY-nvt" id="q9O-wj-MHJ"/>
@@ -107,6 +153,8 @@
     </scenes>
     <resources>
         <image name="4" width="826" height="826"/>
+        <image name="Image 2" width="1369" height="1369"/>
+        <image name="Image 3" width="615" height="615"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">
