@@ -75,10 +75,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="400"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o7n-fy-sLY">
+                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="o7n-fy-sLY">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-S0-Mx8">
+                                                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOE-S0-Mx8">
                                                             <rect key="frame" x="0.0" y="0.0" width="200" height="400"/>
                                                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                             <state key="normal" title="Button" image="Image 3"/>
@@ -106,6 +106,58 @@
                                                 <constraint firstAttribute="bottom" secondItem="o7n-fy-sLY" secondAttribute="bottom" id="tws-HX-qB8"/>
                                                 <constraint firstItem="E5q-fV-0fO" firstAttribute="leading" secondItem="Mq8-9V-bTR" secondAttribute="leading" constant="230" id="vv5-ns-Vhs"/>
                                                 <constraint firstAttribute="bottom" secondItem="E5q-fV-0fO" secondAttribute="bottom" id="xoH-bj-ddf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.70791613259999997" green="0.9467958393" blue="0.8745857802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Trending Categories" id="TaS-2E-R7h">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="400" id="hJs-XZ-DrH">
+                                        <rect key="frame" x="0.0" y="1183" width="430" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hJs-XZ-DrH" id="NeA-b9-UN3">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best-bracelets-mens-1465x1099-c-center" translatesAutoresizingMaskIntoConstraints="NO" id="er7-pU-lTO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="400"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="211" id="erg-3h-6Ac"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mens-watches_gmt_master_2 2" translatesAutoresizingMaskIntoConstraints="NO" id="TyN-Lt-JSu">
+                                                    <rect key="frame" x="219" y="0.0" width="211" height="400"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccW-zi-KNL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="400"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MK-2Q-pfM">
+                                                    <rect key="frame" x="219" y="0.0" width="211" height="400"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.6580600472" green="0.7153767231" blue="0.78348186760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="er7-pU-lTO" firstAttribute="top" secondItem="NeA-b9-UN3" secondAttribute="top" id="1c4-gq-Ee5"/>
+                                                <constraint firstItem="ccW-zi-KNL" firstAttribute="bottom" secondItem="er7-pU-lTO" secondAttribute="bottom" id="3hl-6G-TzO"/>
+                                                <constraint firstItem="er7-pU-lTO" firstAttribute="bottom" secondItem="TyN-Lt-JSu" secondAttribute="bottom" id="BfH-78-dyi"/>
+                                                <constraint firstItem="er7-pU-lTO" firstAttribute="top" secondItem="TyN-Lt-JSu" secondAttribute="top" id="BwY-Le-Tpx"/>
+                                                <constraint firstItem="er7-pU-lTO" firstAttribute="leading" secondItem="NeA-b9-UN3" secondAttribute="leading" id="K7D-Zu-Gq8"/>
+                                                <constraint firstItem="TyN-Lt-JSu" firstAttribute="leading" secondItem="er7-pU-lTO" secondAttribute="trailing" constant="8" symbolic="YES" id="NVn-6G-H33"/>
+                                                <constraint firstItem="0MK-2Q-pfM" firstAttribute="trailing" secondItem="TyN-Lt-JSu" secondAttribute="trailing" id="SOh-qh-ajy"/>
+                                                <constraint firstAttribute="bottom" secondItem="er7-pU-lTO" secondAttribute="bottom" id="YbV-TB-3Mk"/>
+                                                <constraint firstItem="ccW-zi-KNL" firstAttribute="trailing" secondItem="er7-pU-lTO" secondAttribute="trailing" id="bU4-74-mZQ"/>
+                                                <constraint firstItem="0MK-2Q-pfM" firstAttribute="bottom" secondItem="TyN-Lt-JSu" secondAttribute="bottom" id="gXR-WK-cUw"/>
+                                                <constraint firstItem="0MK-2Q-pfM" firstAttribute="top" secondItem="TyN-Lt-JSu" secondAttribute="top" id="itC-ee-Vjv"/>
+                                                <constraint firstItem="ccW-zi-KNL" firstAttribute="top" secondItem="er7-pU-lTO" secondAttribute="top" id="msd-w4-p6q"/>
+                                                <constraint firstAttribute="trailing" secondItem="TyN-Lt-JSu" secondAttribute="trailing" id="sQO-ix-RWw"/>
+                                                <constraint firstItem="0MK-2Q-pfM" firstAttribute="leading" secondItem="TyN-Lt-JSu" secondAttribute="leading" id="utD-vy-IZr"/>
+                                                <constraint firstItem="ccW-zi-KNL" firstAttribute="leading" secondItem="er7-pU-lTO" secondAttribute="leading" id="zUI-D9-cfp"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.70791613259999997" green="0.9467958393" blue="0.8745857802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -150,13 +202,198 @@
             </objects>
             <point key="canvasLocation" x="1486.046511627907" y="622.53218884120179"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="I9J-Dx-L4A">
+            <objects>
+                <tableViewController id="oxS-KI-1xH" customClass="HomeTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="5ss-Le-Wqi">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="" id="opo-6W-xB5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="99" id="DSM-Fz-J9i">
+                                        <rect key="frame" x="0.0" y="50" width="430" height="99"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DSM-Fz-J9i" id="a07-Sl-jPI">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="99"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="tD0-5e-Le3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="430" height="99"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                            <constraints>
+                                                <constraint firstItem="tD0-5e-Le3" firstAttribute="leading" secondItem="a07-Sl-jPI" secondAttribute="leading" id="2Nt-MI-oaU"/>
+                                                <constraint firstAttribute="trailing" secondItem="tD0-5e-Le3" secondAttribute="trailing" id="QsI-gb-O3c"/>
+                                                <constraint firstAttribute="bottom" secondItem="tD0-5e-Le3" secondAttribute="bottom" id="tw4-ab-bXR"/>
+                                                <constraint firstItem="tD0-5e-Le3" firstAttribute="top" secondItem="a07-Sl-jPI" secondAttribute="top" id="uBR-rB-8Y5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Featured" id="Zj2-cw-08r">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="67" id="NIE-92-tCT">
+                                        <rect key="frame" x="0.0" y="227" width="430" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NIE-92-tCT" id="mqm-Yf-TCF">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkP-O4-DfU">
+                                                    <rect key="frame" x="20" y="55" width="390" height="300"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <viewLayoutGuide key="contentLayoutGuide" id="TgA-E8-jfy"/>
+                                                    <viewLayoutGuide key="frameLayoutGuide" id="weu-lC-5hC"/>
+                                                </scrollView>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="gGN-wR-e5s">
+                                                    <rect key="frame" x="157" y="363" width="116" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </pageControl>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Trending Categories" id="iJx-9X-Ugg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="400" id="15A-ME-ML3">
+                                        <rect key="frame" x="0.0" y="372" width="430" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="15A-ME-ML3" id="Fo3-dI-COY">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best-bracelets-mens-1465x1099-c-center" translatesAutoresizingMaskIntoConstraints="NO" id="DDu-HC-Vxm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="400"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="211" id="7Dn-P5-kVK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mens-watches_gmt_master_2 2" translatesAutoresizingMaskIntoConstraints="NO" id="svC-FZ-gGz">
+                                                    <rect key="frame" x="219" y="0.0" width="211" height="400"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-nU-AcI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="400"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPj-gB-Qff">
+                                                    <rect key="frame" x="219" y="0.0" width="211" height="400"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.6580600472" green="0.7153767231" blue="0.78348186760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="DDu-HC-Vxm" firstAttribute="leading" secondItem="Fo3-dI-COY" secondAttribute="leading" id="9iw-vO-MJu"/>
+                                                <constraint firstAttribute="bottom" secondItem="DDu-HC-Vxm" secondAttribute="bottom" id="GHK-YC-817"/>
+                                                <constraint firstItem="IOg-nU-AcI" firstAttribute="bottom" secondItem="DDu-HC-Vxm" secondAttribute="bottom" id="IDG-uC-IWQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="svC-FZ-gGz" secondAttribute="trailing" id="MQJ-Ga-ZPW"/>
+                                                <constraint firstItem="DDu-HC-Vxm" firstAttribute="bottom" secondItem="svC-FZ-gGz" secondAttribute="bottom" id="Md6-Rj-T4W"/>
+                                                <constraint firstItem="svC-FZ-gGz" firstAttribute="leading" secondItem="DDu-HC-Vxm" secondAttribute="trailing" constant="8" symbolic="YES" id="RTg-vy-IYz"/>
+                                                <constraint firstItem="gPj-gB-Qff" firstAttribute="top" secondItem="svC-FZ-gGz" secondAttribute="top" id="Ses-Rf-1yA"/>
+                                                <constraint firstItem="IOg-nU-AcI" firstAttribute="trailing" secondItem="DDu-HC-Vxm" secondAttribute="trailing" id="VMH-Jk-TVN"/>
+                                                <constraint firstItem="gPj-gB-Qff" firstAttribute="leading" secondItem="svC-FZ-gGz" secondAttribute="leading" id="c93-Ay-T3m"/>
+                                                <constraint firstItem="DDu-HC-Vxm" firstAttribute="top" secondItem="Fo3-dI-COY" secondAttribute="top" id="eMN-9D-9eD"/>
+                                                <constraint firstItem="gPj-gB-Qff" firstAttribute="bottom" secondItem="svC-FZ-gGz" secondAttribute="bottom" id="fb1-7a-pvw"/>
+                                                <constraint firstItem="IOg-nU-AcI" firstAttribute="top" secondItem="DDu-HC-Vxm" secondAttribute="top" id="hJY-Fl-HiY"/>
+                                                <constraint firstItem="DDu-HC-Vxm" firstAttribute="top" secondItem="svC-FZ-gGz" secondAttribute="top" id="hQD-zB-S3z"/>
+                                                <constraint firstItem="IOg-nU-AcI" firstAttribute="leading" secondItem="DDu-HC-Vxm" secondAttribute="leading" id="lFr-2k-E4n"/>
+                                                <constraint firstItem="gPj-gB-Qff" firstAttribute="trailing" secondItem="svC-FZ-gGz" secondAttribute="trailing" id="xNU-h1-4p2"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.70791613259999997" green="0.9467958393" blue="0.8745857802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Trending Categories" id="FH6-Qf-QWR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scrollCell" rowHeight="400" id="J7c-8R-sqH">
+                                        <rect key="frame" x="0.0" y="850" width="430" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J7c-8R-sqH" id="tfK-kb-XhY">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best-bracelets-mens-1465x1099-c-center" translatesAutoresizingMaskIntoConstraints="NO" id="a2B-fB-rCl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="400"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="211" id="nVw-He-dGT"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mens-watches_gmt_master_2 2" translatesAutoresizingMaskIntoConstraints="NO" id="IyS-8U-XNg">
+                                                    <rect key="frame" x="219" y="0.0" width="211" height="400"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAw-Eh-Jyh">
+                                                    <rect key="frame" x="0.0" y="0.0" width="211" height="400"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMl-ur-UEd">
+                                                    <rect key="frame" x="219" y="0.0" width="211" height="400"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.6580600472" green="0.7153767231" blue="0.78348186760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstItem="OMl-ur-UEd" firstAttribute="top" secondItem="IyS-8U-XNg" secondAttribute="top" id="0Sp-dS-WSG"/>
+                                                <constraint firstAttribute="trailing" secondItem="IyS-8U-XNg" secondAttribute="trailing" id="24c-Kn-nFl"/>
+                                                <constraint firstAttribute="bottom" secondItem="a2B-fB-rCl" secondAttribute="bottom" id="2kS-sj-gp0"/>
+                                                <constraint firstItem="OMl-ur-UEd" firstAttribute="bottom" secondItem="IyS-8U-XNg" secondAttribute="bottom" id="7GB-tA-2qu"/>
+                                                <constraint firstItem="OMl-ur-UEd" firstAttribute="trailing" secondItem="IyS-8U-XNg" secondAttribute="trailing" id="DcG-XX-MVa"/>
+                                                <constraint firstItem="a2B-fB-rCl" firstAttribute="leading" secondItem="tfK-kb-XhY" secondAttribute="leading" id="Kwu-Va-R6a"/>
+                                                <constraint firstItem="iAw-Eh-Jyh" firstAttribute="leading" secondItem="a2B-fB-rCl" secondAttribute="leading" id="OUA-iu-apq"/>
+                                                <constraint firstItem="a2B-fB-rCl" firstAttribute="top" secondItem="IyS-8U-XNg" secondAttribute="top" id="Wyw-fC-qPP"/>
+                                                <constraint firstItem="iAw-Eh-Jyh" firstAttribute="trailing" secondItem="a2B-fB-rCl" secondAttribute="trailing" id="XBh-yw-77P"/>
+                                                <constraint firstItem="a2B-fB-rCl" firstAttribute="bottom" secondItem="IyS-8U-XNg" secondAttribute="bottom" id="msa-Rj-RGX"/>
+                                                <constraint firstItem="iAw-Eh-Jyh" firstAttribute="bottom" secondItem="a2B-fB-rCl" secondAttribute="bottom" id="pYb-R4-LiP"/>
+                                                <constraint firstItem="iAw-Eh-Jyh" firstAttribute="top" secondItem="a2B-fB-rCl" secondAttribute="top" id="tz1-0r-RE5"/>
+                                                <constraint firstItem="OMl-ur-UEd" firstAttribute="leading" secondItem="IyS-8U-XNg" secondAttribute="leading" id="ug4-PP-mdQ"/>
+                                                <constraint firstItem="a2B-fB-rCl" firstAttribute="top" secondItem="tfK-kb-XhY" secondAttribute="top" id="vYG-cl-cKa"/>
+                                                <constraint firstItem="IyS-8U-XNg" firstAttribute="leading" secondItem="a2B-fB-rCl" secondAttribute="trailing" constant="8" symbolic="YES" id="x9Y-AL-2G0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.70791613259999997" green="0.9467958393" blue="0.8745857802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="oxS-KI-1xH" id="K2F-kQ-vQS"/>
+                            <outlet property="delegate" destination="oxS-KI-1xH" id="NMW-cC-4MZ"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="uEi-Ts-nMe"/>
+                    <navigationItem key="navigationItem" id="wsN-lm-Ijz">
+                        <barButtonItem key="rightBarButtonItem" title="favorites" image="heart.fill" catalog="system" id="LjA-Bw-V81"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pageControl" destination="gGN-wR-e5s" id="H9a-AO-5sl"/>
+                        <outlet property="scrollView" destination="jkP-O4-DfU" id="Q4x-cr-1CG"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6gF-Bq-DaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3253.953488372093" y="627.68240343347645"/>
+        </scene>
     </scenes>
     <resources>
         <image name="4" width="826" height="826"/>
         <image name="Image 2" width="1369" height="1369"/>
         <image name="Image 3" width="615" height="615"/>
+        <image name="best-bracelets-mens-1465x1099-c-center" width="1099" height="1099"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="mens-watches_gmt_master_2 2" width="798" height="798"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

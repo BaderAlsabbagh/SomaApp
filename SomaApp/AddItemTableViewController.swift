@@ -17,6 +17,10 @@ class AddItemTableViewController: UITableViewController, UIImagePickerController
     @IBOutlet weak var timeTextField: UITextField!
     
     @IBOutlet weak var imageView: UIImageView!
+    
+    
+    @IBOutlet weak var checkMark: UIButton!
+    @IBOutlet weak var submitItem: UIButton!
     let categories = ["Clothing", "Bags", "Footwear", "Eyewear", "Accessories", "Jewelry", "Other"]
     
     let genders = ["Male", "Female", "Both"]
@@ -54,6 +58,9 @@ class AddItemTableViewController: UITableViewController, UIImagePickerController
         genderPickerView.tag = 2
         timePickerView.tag = 3
         
+        submitItem.isEnabled = false
+                    //submitItem.layer.cornerRadius = 17.0
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -64,41 +71,68 @@ class AddItemTableViewController: UITableViewController, UIImagePickerController
     //Image Selection Code
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
         
-                      let alert = UIAlertController(
-                          title: "Upload Images",
-                          message: "Are you sure you want upload images?",
-                          preferredStyle: .alert
-                      )
+        let alert = UIAlertController(
+            title: "Upload Images",
+            message: "Are you sure you want upload images?",
+            preferredStyle: .alert
+        )
         
-                      alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-        
-                          let viewController = UIImagePickerController()
-                          viewController.sourceType = .photoLibrary
-                          viewController.delegate = self
-                          viewController.allowsEditing = true
-                          self.present(viewController, animated: true)
-                      })
-        
-                      alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        
-                      self.present(alert, animated: true)
-                  }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
             
-            picker.dismiss(animated: true)
+            let viewController = UIImagePickerController()
+            viewController.sourceType = .photoLibrary
+            viewController.delegate = self
+            viewController.allowsEditing = true
+            self.present(viewController, animated: true)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true)
+        
+        guard let image = info[.editedImage] as? UIImage else {
+            print("No image found")
+            return
+        }
+        
+        // print out the image size as a test
+        //print(image.size)
+        imageView.image = image
+    }
+    
+    
+    @IBAction func checkMarkButtonPressed(_ sender: Any) {
+        
+        guard
+            let categoryTextField = categoryTextField.text, !categoryTextField.isEmpty
+        else {
+            let alert = UIAlertController(
+                title: "Invalid Request",
+                message: "Please fill all the empty fields",
+                preferredStyle: .alert)
             
-            guard let image = info[.editedImage] as? UIImage else {
-                print("No image found")
-                return
-            }
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel))
             
-            // print out the image size as a test
-            //print(image.size)
-            imageView.image = image
+            self.present(alert, animated: true)
+            return
+        }
+        
+        validated.toggle()
+    }
+    
+    var validated = false {
+        didSet {
+            checkMark.isSelected = validated
+            submitItem.isEnabled = validated
         }
     }
-
+    
+}
     extension AddItemTableViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1
