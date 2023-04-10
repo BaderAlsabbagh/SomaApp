@@ -72,7 +72,7 @@ class AddItemTableViewController: UITableViewController, UIImagePickerController
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
         
         let alert = UIAlertController(
-            title: "Upload Images",
+            title: "",
             message: "Are you sure you want upload images?",
             preferredStyle: .alert
         )
@@ -96,12 +96,9 @@ class AddItemTableViewController: UITableViewController, UIImagePickerController
         picker.dismiss(animated: true)
         
         guard let image = info[.editedImage] as? UIImage else {
-            print("No image found")
+            print("Image Not Found")
             return
         }
-        
-        // print out the image size as a test
-        //print(image.size)
         imageView.image = image
     }
     

@@ -16,26 +16,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIR-vf-LN6">
-                                <rect key="frame" x="175" y="416" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIR-vf-LN6">
+                                <rect key="frame" x="50" y="415.66666666666669" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmv-4t-gew">
-                                <rect key="frame" x="175" y="457" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmv-4t-gew">
+                                <rect key="frame" x="50" y="466.66666666666669" width="293" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IOb-OD-Sq3">
+                                <rect key="frame" x="103" y="218.99999999999997" width="240" height="127.66666666666666"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IOb-OD-Sq3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="160" id="3oH-us-qSi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tIR-vf-LN6" secondAttribute="trailing" constant="50" id="Jlv-QX-fbJ"/>
+                            <constraint firstItem="tIR-vf-LN6" firstAttribute="top" secondItem="IOb-OD-Sq3" secondAttribute="bottom" constant="68.670000000000002" id="S3E-eO-Ac0"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="IOb-OD-Sq3" secondAttribute="trailing" constant="50" id="ad4-YR-bxX"/>
+                            <constraint firstItem="IOb-OD-Sq3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="103" id="iVy-QO-V6h"/>
+                            <constraint firstItem="tIR-vf-LN6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="qio-Ae-r9T"/>
+                            <constraint firstItem="tIR-vf-LN6" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="tWK-LY-FOZ"/>
+                            <constraint firstItem="Qmv-4t-gew" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="uTM-XU-Yyo"/>
+                            <constraint firstItem="Qmv-4t-gew" firstAttribute="top" secondItem="tIR-vf-LN6" secondAttribute="bottom" constant="30" id="vXl-yG-pBa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qmv-4t-gew" secondAttribute="trailing" constant="50" id="zUH-jP-gLw"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="emailLabel" destination="tIR-vf-LN6" id="Pcv-fd-91z"/>
+                        <outlet property="imageView" destination="IOb-OD-Sq3" id="Vsf-Mz-JUr"/>
                         <outlet property="nameLabel" destination="Qmv-4t-gew" id="dAB-LI-f3t"/>
                     </connections>
                 </viewController>

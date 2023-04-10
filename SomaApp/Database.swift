@@ -23,7 +23,7 @@ class Database {
     }
     
     class Storage {
-        static let ref = FirebaseStorage.Storage.storage(url: "gs://refur-2a2f0.appspot.com/").reference()
+        static let ref = FirebaseStorage.Storage.storage(url: "gs://somaapp-a3768.appspot.com").reference()
         
         static func saveImage(image: UIImage) -> String? {
             

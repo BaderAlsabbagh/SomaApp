@@ -20,6 +20,9 @@
 		6A6D6C3C29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */; };
 		6A6D6C3E29E3B07D00C45433 /* DatabaseTestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */; };
 		6A6D6C4029E3B3D700C45433 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6C3F29E3B3D700C45433 /* Database.swift */; };
+		6A6D6C4229E4527C00C45433 /* StartBidTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */; };
+		6A6D6C4429E4881300C45433 /* SubmitBidTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */; };
+		6A74283929E4A9F900F17BC8 /* DatabaseLoadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A74283829E4A9F900F17BC8 /* DatabaseLoadImage.swift */; };
 		6A8972A229DDB8F3000B84E2 /* IsaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89729829DDB8F1000B84E2 /* IsaViewController.swift */; };
 		6A8972A329DDB8F3000B84E2 /* LogosAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */; };
 		6A8972A429DDB8F3000B84E2 /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89729A29DDB8F1000B84E2 /* AddItemTableViewController.swift */; };
@@ -49,6 +52,9 @@
 		6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatabaseTestingStoryboard.storyboard; sourceTree = "<group>"; };
 		6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTestingViewController.swift; sourceTree = "<group>"; };
 		6A6D6C3F29E3B3D700C45433 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartBidTableViewController.swift; sourceTree = "<group>"; };
+		6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBidTableViewController.swift; sourceTree = "<group>"; };
+		6A74283829E4A9F900F17BC8 /* DatabaseLoadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseLoadImage.swift; sourceTree = "<group>"; };
 		6A89729829DDB8F1000B84E2 /* IsaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaViewController.swift; sourceTree = "<group>"; };
 		6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LogosAssets.xcassets; sourceTree = "<group>"; };
 		6A89729A29DDB8F1000B84E2 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
@@ -104,12 +110,11 @@
 			children = (
 				6A8972AE29DDB958000B84E2 /* Main.storyboard */,
 				6A89729B29DDB8F2000B84E2 /* AddItemStoryboard.storyboard */,
+				6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */,
 				6A8972A129DDB8F3000B84E2 /* HomepageStoryboard.storyboard */,
 				6A410A5529D1BB690010CA31 /* BaderStoryboard.storyboard */,
-				6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */,
-				6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */,
-				6A6D6C3F29E3B3D700C45433 /* Database.swift */,
-				6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */,
+				6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */,
+				6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */,
 				6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */,
 				6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */,
 				6A410A5729D1BCE00010CA31 /* RaneemStoryboard.storyboard */,
@@ -124,6 +129,10 @@
 				6ADA84CC29D06FB800DB1DB6 /* ViewController.swift */,
 				6ADA84C829D06FB800DB1DB6 /* AppDelegate.swift */,
 				6ADA84CA29D06FB800DB1DB6 /* SceneDelegate.swift */,
+				6A6D6C3F29E3B3D700C45433 /* Database.swift */,
+				6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */,
+				6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */,
+				6A74283829E4A9F900F17BC8 /* DatabaseLoadImage.swift */,
 				6ADA84D129D06FBA00DB1DB6 /* Assets.xcassets */,
 				6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */,
 				6ADA84D329D06FBA00DB1DB6 /* LaunchScreen.storyboard */,
@@ -226,11 +235,14 @@
 				6A8972A429DDB8F3000B84E2 /* AddItemTableViewController.swift in Sources */,
 				6A8972A829DDB8F3000B84E2 /* SignupViewController.swift in Sources */,
 				6ADA84C929D06FB800DB1DB6 /* AppDelegate.swift in Sources */,
+				6A6D6C4229E4527C00C45433 /* StartBidTableViewController.swift in Sources */,
 				6A6D6C3E29E3B07D00C45433 /* DatabaseTestingViewController.swift in Sources */,
 				6A8972AA29DDB8F3000B84E2 /* HomeTableViewController.swift in Sources */,
 				6A8972A229DDB8F3000B84E2 /* IsaViewController.swift in Sources */,
 				6A8972A629DDB8F3000B84E2 /* ForgetPasswordViewController.swift in Sources */,
 				6A8972A729DDB8F3000B84E2 /* HomeViewController.swift in Sources */,
+				6A74283929E4A9F900F17BC8 /* DatabaseLoadImage.swift in Sources */,
+				6A6D6C4429E4881300C45433 /* SubmitBidTableViewController.swift in Sources */,
 				6ADA84CB29D06FB800DB1DB6 /* SceneDelegate.swift in Sources */,
 				6A8972A929DDB8F3000B84E2 /* BiddingViewController.swift in Sources */,
 				6A6D6C4029E3B3D700C45433 /* Database.swift in Sources */,
