@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Item Table View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="aFO-sU-bL1">
             <objects>
-                <tableViewController id="tV7-ih-w7p" customClass="AddItemTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tV7-ih-w7p" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="A7b-Ad-P83">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
