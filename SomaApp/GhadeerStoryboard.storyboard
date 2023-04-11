@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,7 +137,7 @@
         <!--View Controller-->
         <scene sceneID="gxb-DM-nDP">
             <objects>
-                <viewController id="AiY-6L-4ER" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="AiY-6L-4ER" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WSh-Nw-iBA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -260,7 +260,7 @@
         <!--Collection View Controller-->
         <scene sceneID="ldO-JP-vFI">
             <objects>
-                <collectionViewController id="Cel-G5-Hz6" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="Cel-G5-Hz6" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fBd-zN-neX">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,10 +282,10 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AZB-Zu-a1w">
                                             <rect key="frame" x="0.0" y="0.0" width="195" height="209"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-oc-DBG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="m7a-oc-DBG">
                                                     <rect key="frame" x="0.0" y="0.0" width="195" height="155.66666666666666"/>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dep-AI-brc">
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dep-AI-brc">
                                                     <rect key="frame" x="10" y="163.66666666666666" width="175" height="18"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gucci" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWd-yv-gYA">
@@ -313,8 +313,11 @@
                                                         <constraint firstAttribute="trailing" secondItem="TKG-sP-4HZ" secondAttribute="trailing" id="tKL-bD-eai"/>
                                                     </constraints>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Black leather bag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-eo-P1i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black leather bag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXw-eo-P1i">
                                                     <rect key="frame" x="34.666666666666664" y="189.66666666666666" width="125.66666666666669" height="19.333333333333343"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19.333333333333343" id="bao-ir-uk3"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -350,7 +353,7 @@
         <!--View Controller-->
         <scene sceneID="siO-dD-5Yq">
             <objects>
-                <viewController id="fA2-Pg-LIg" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="fA2-Pg-LIg" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3oB-ZV-3Dm">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,7 +421,7 @@
         <!--Collection View Controller-->
         <scene sceneID="frW-cB-cre">
             <objects>
-                <collectionViewController id="fiF-Ba-3FA" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="fiF-Ba-3FA" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4pi-vp-9n1">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -508,7 +511,7 @@
         <!--Collection View Controller-->
         <scene sceneID="GBC-V4-c1E">
             <objects>
-                <collectionViewController id="Qug-nj-FSg" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="Qug-nj-FSg" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Woo-OL-uRG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -598,7 +601,7 @@
         <!--Collection View Controller-->
         <scene sceneID="Wbq-sQ-Elr">
             <objects>
-                <collectionViewController id="cBa-aQ-Dlq" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="cBa-aQ-Dlq" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xUz-j5-Afp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,7 +691,7 @@
         <!--Collection View Controller-->
         <scene sceneID="ijR-6t-tfK">
             <objects>
-                <collectionViewController id="ggG-of-1Bm" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="ggG-of-1Bm" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ItD-sx-kjK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,7 +781,7 @@
         <!--Collection View Controller-->
         <scene sceneID="ncz-gg-LSq">
             <objects>
-                <collectionViewController id="VR1-XT-wYe" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="VR1-XT-wYe" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hCo-OE-Veb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -868,7 +871,7 @@
         <!--Collection View Controller-->
         <scene sceneID="f8j-GT-XV5">
             <objects>
-                <collectionViewController id="o8z-yc-jYr" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="o8z-yc-jYr" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="V0I-Ra-WOM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -958,7 +961,7 @@
         <!--Collection View Controller-->
         <scene sceneID="AXe-fr-TEL">
             <objects>
-                <collectionViewController id="PZ7-dN-CoJ" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="PZ7-dN-CoJ" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="aoP-AM-Zba">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1048,7 +1051,7 @@
         <!--Collection View Controller-->
         <scene sceneID="pzp-m9-KMN">
             <objects>
-                <collectionViewController id="q7s-Fd-WBH" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="q7s-Fd-WBH" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="E0W-gW-AVS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1138,7 +1141,7 @@
         <!--Collection View Controller-->
         <scene sceneID="GIC-Re-M5d">
             <objects>
-                <collectionViewController id="Zf3-z9-VQW" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="Zf3-z9-VQW" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="O0Z-Mw-Dew">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1228,7 +1231,7 @@
         <!--Collection View Controller-->
         <scene sceneID="vea-gh-1Ja">
             <objects>
-                <collectionViewController id="Mx1-lx-FmW" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="Mx1-lx-FmW" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9V5-RA-bfk">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1318,7 +1321,7 @@
         <!--Collection View Controller-->
         <scene sceneID="OMS-LI-Hze">
             <objects>
-                <collectionViewController id="KeL-M9-Kqo" sceneMemberID="viewController">
+                <collectionViewController modalPresentationStyle="fullScreen" id="KeL-M9-Kqo" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="khT-b0-lAa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
