@@ -1,11 +1,12 @@
 //import UIKit
 import FirebaseStorage
+import UIKit
 
-class FirebaseImageDownloader {
-    static let shared = FirebaseImageDownloader()
+class ImportImage {
+    static let shared = ImportImage ()
     
     func downloadImage(imageUuid: String, completion: @escaping (UIImage?, Error?) -> Void) {
-        let storageRef = Storage.storage().reference().child("images/\(imageUuid).png")
+        let storageRef = Storage.storage().reference().child("images/\(imageUuid)")
         
         // Download the image data from storage
         storageRef.getData(maxSize: 5 * 1024 * 1024) { (data, error) in

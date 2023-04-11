@@ -181,6 +181,9 @@
                     <tabBarItem key="tabBarItem" title="Start Bid" image="hammer.circle.fill" catalog="system" id="16e-NB-BvJ"/>
                     <navigationItem key="navigationItem" id="7MM-Oq-3J5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="productImageView" destination="iW0-UT-lzb" id="CAt-Pc-c2J"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTg-PQ-ngr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,6 +393,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="vMH-2m-N9x"/>
                     <connections>
+                        <outlet property="productImageView" destination="VJM-mS-EXG" id="Q6x-1K-CDw"/>
                         <outlet property="setBidTextField" destination="j46-2g-m7m" id="Y9Z-kK-67Y"/>
                         <outlet property="submitBid" destination="Nnz-cN-3nc" id="fN9-ol-iLS"/>
                         <segue destination="bxw-eo-trq" kind="unwind" identifier="toStartBid" unwindAction="unwindToBidView:" id="225-Sr-Tcq"/>

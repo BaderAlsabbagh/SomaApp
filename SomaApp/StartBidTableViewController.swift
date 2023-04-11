@@ -9,11 +9,19 @@ import UIKit
 
 class StartBidTableViewController: UITableViewController {
     
+    @IBOutlet weak var productImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        
+        let imageUuid = "7914EDA5-EB87-40CD-9127-77423990C622.jpg"
+                ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                    } else if let image = image {
+                        self?.productImageView.image = image
+                    }
+                }
         // Do any additional setup after loading the view.
     }
     @IBAction func unwindToBidView(_ unwindSegue: UIStoryboardSegue) {

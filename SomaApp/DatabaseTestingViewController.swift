@@ -40,26 +40,16 @@ class DatabaseTestingViewController: UIViewController {
             }
         }
         
-        let storageRef = Storage.storage().reference().child("images/tissotWatch.png")
-        
-        // Download the image data from storage
-        storageRef.getData(maxSize: 5 * 1024 * 1024) { [weak self] (data, error) in
-            if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
-            } else if let data = data {
-                // Convert the downloaded data into a UIImage
-                if let image = UIImage(data: data) {
-                    // Set the image as the contents of the image view
-                    self?.imageView.image = image
-                } else {
-                    print("Error converting image data to UIImage")
+        let imageUuid = "tissotWatch"
+                ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                    } else if let image = image {
+                        self?.imageView.image = image
+                    }
                 }
-            } else {
-                print("Error: No image data and no error message")
             }
         }
-    }
-}
      
            
 

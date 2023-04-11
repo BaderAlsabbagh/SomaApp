@@ -9,6 +9,7 @@ import UIKit
 
 class SubmitBidTableViewController: UITableViewController {
 
+    @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var setBidTextField: UITextField!
     
     @IBOutlet weak var submitBid: UIButton!
@@ -20,6 +21,14 @@ class SubmitBidTableViewController: UITableViewController {
         super.viewDidLoad()
         submitBid.isEnabled = false
         
+        let imageUuid = "tissotWatch"
+                ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                    } else if let image = image {
+                        self?.productImageView.image = image
+                    }
+                }
         // Do any additional setup after loading the view.
     }
     @IBAction func submitBidButtonPressed(_ sender: Any) {
@@ -42,7 +51,7 @@ class SubmitBidTableViewController: UITableViewController {
     
     var validated = false {
         didSet {
-            setBidTextField.text = validated ? "\(setBidTextField.text!)" : "falsde"
+            setBidTextField.text = validated ? "\(setBidTextField.text!)" : "false"
             submitBid.isEnabled = validated
         }
     }
