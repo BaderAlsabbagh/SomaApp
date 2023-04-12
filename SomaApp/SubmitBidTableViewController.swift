@@ -21,7 +21,7 @@ class SubmitBidTableViewController: UITableViewController {
         super.viewDidLoad()
         submitBid.isEnabled = false
         
-        let imageUuid = "tissotWatch"
+        let imageUuid = "tissotWatch.png"
                 ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
                     if let error = error {
                         print("Error downloading image: \(error.localizedDescription)")

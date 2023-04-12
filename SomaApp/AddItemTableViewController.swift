@@ -8,7 +8,8 @@
 import UIKit
 import Firebase
 
-class AddItemTableViewController: UITableViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class AddItemTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     
     @IBOutlet weak var categoryTextField: UITextField!
     

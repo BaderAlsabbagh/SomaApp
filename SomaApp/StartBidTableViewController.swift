@@ -14,7 +14,7 @@ class StartBidTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        let imageUuid = "7914EDA5-EB87-40CD-9127-77423990C622.jpg"
+        let imageUuid = "tissotWatch.png"
                 ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
                     if let error = error {
                         print("Error downloading image: \(error.localizedDescription)")
