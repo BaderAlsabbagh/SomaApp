@@ -10,6 +10,7 @@ import FirebaseStorage
 
 class Database {
     
+    
     class Users {
         static let ref = FirebaseDatabase.Database.database(url: "https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
         
@@ -19,6 +20,18 @@ class Database {
         
         static subscript (uuid: String) -> DatabaseReference {
             return Database.Users.users.child(uuid)
+        }
+    }
+    
+    class Products {
+        static let ref = FirebaseDatabase.Database.database(url: "https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
+        
+        static var products = ref.child("products")
+        
+        //static var currentUser: DatabaseReference { ref.child(User.user.uid!) }
+        
+        static subscript (uuid: String) -> DatabaseReference {
+            return Database.Products.products.child(uuid)
         }
     }
     

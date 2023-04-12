@@ -168,7 +168,34 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
             print("Error: Some fields are empty")
             return
         }
+        var data = ["productName": productNameTextField.text,
+                    "description": descriptionTextField.text,
+                    "startingPrice": startingPriceTextField.text,
+                    "minimumIncrement":minimumIncrementTextField.text,
+                    "buyItNow": buyItNowTextField.text,
+                    "timePeriod": timeTextField.text,
+                    "category": categoryTextField.text,
+                    "gender": genderTextField.text]
+        // Create a database reference
+       let databaseRef = Database.Products.products.childByAutoId()
+
+        // Create a child reference for "products" node
+        let productsRef = databaseRef
+
+        // Set the values to be saved in the database
+        // data = ["name": name, "email": email]
+
+        // Save the data to the new child node
+        productsRef.setValue(data) { (error, ref) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            } else {
+                print("Data saved successfully!")
+            }
+        }
     }
+
+    
 
 //        let storageRef = Storage.storage().reference().child("images/\(UUID().uuidString).jpg")
 //
@@ -188,46 +215,6 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
 //                    print("Error: \(error?.localizedDescription ?? "Unknown error")")
 //                    return
 //                }
-
-    //                var data = ["productName": productNameTextField.text,
-    //                            "description": descriptionTextField.text,
-    //                            "startingPrice": startingPriceTextField.text,
-    //                            "minimumIncrement":minimumIncrementTextField.text,
-    //                            //"buyItNow": buyItNowTextField.text,
-    //                            "timePeriod": timeTextField.text,
-    //                            "category": categoryTextField.text,
-    //                            "gender": genderTextField.text]
-    //                // Create a database reference
-    //                let databaseRef = Database.Users.users.childByAutoId()
-    //
-    //                // Create a child reference for "users" node
-    //                let usersRef = databaseRef.child("products")
-    //
-    //                // Create a new child node with an automatically generated ID
-    //                let newChildRef = usersRef.childByAutoId()
-    //
-    //                // Set the values to be saved in the database
-    //                // data = ["name": name, "email": email]
-    //
-    //                // Save the data to the new child node
-    //                newChildRef.setValue(data) { (error, ref) in
-    //                    if let error = error {
-//                        print("Error: \(error.localizedDescription)")
-//                    } else {
-//                        print("Data saved successfully!")
-//                    }
-//                }
-//
-//                databaseRef.setValue(data) { (error, ref) in
-//                    if let error = error {
-//                        print("Error: \(error.localizedDescription)")
-//                    } else {
-//                        print("Data saved successfully")
-//                    }
-//                }
-//            }
-        
-
     
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
             switch pickerView.tag {
