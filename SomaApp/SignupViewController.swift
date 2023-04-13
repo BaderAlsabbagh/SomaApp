@@ -62,7 +62,7 @@ class SignupViewController: UIViewController {
                     
 //                    database thing
                     let name = self.firstName.text! + " " + self.lastName.text!
-                    let ref = Database.database(url: "https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
+                    let ref = FirebaseDatabase.Database.database(url: "https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
                     let uid = Auth.auth().currentUser?.uid
                     ref.child("users").child(uid!).setValue(["Email" : username, "Name" : name])
                     
