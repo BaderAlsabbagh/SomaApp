@@ -7,28 +7,105 @@
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+ 
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        
+        // Configure the cell
+        cell.imageView.image = UIImage(named: "Image\(indexPath.item + 1)")
+        cell.imageView.contentMode = .scaleAspectFill
+        cell.imageView?.layer.cornerRadius = 12.0
+        cell.imageView?.clipsToBounds = true
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cellWidth = (collectionView.bounds.width - 10) / 2
+        let cellHeight = cellWidth
+        return CGSize(width: cellWidth, height: cellHeight)
+    }
+    
+    
+    @IBOutlet weak var contenMode: UICollectionView!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var contentWidth: CGFloat = 2000.1
+//    var contentWidth: CGFloat = 2000.1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+ 
+        
+        contenMode.delegate = self
+        contenMode.dataSource = self
+        
         scrollView.delegate = self
         
-        for image in 0...4 {
+        let imageWidth: CGFloat = 350.0
+        let imageHeight: CGFloat = 300.0
+        
+        for image in 5...8 {
             let imageToDisplay = UIImage(named: "\(image).png)")
             let imageView = UIImageView(image: imageToDisplay)
-            let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+            imageView.contentMode = .scaleAspectFill
+            
+            // Set the size of the image view
+            imageView.frame = CGRect(x: scrollView.frame.width * CGFloat(image - 5), y: 0, width: imageWidth, height: imageHeight)
+            
+            // Set the corner radius based on the image view's width and height
+            imageView.layer.cornerRadius = 20.0
+            imageView.clipsToBounds = true
+            
             scrollView.addSubview(imageView)
-            imageView.frame = CGRect(x: xCoordinate - 200, y: 0, width: 100, height: 100)
         }
-        scrollView.contentSize = CGSize(width: 2000, height: 100)
+        
+        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(4), height: scrollView.frame.height)
     }
+        
+//
+//        for image in 5...8 {
+//            let imageToDisplay = UIImage(named: "\(image).png)")
+//            let imageView = UIImageView(image: imageToDisplay)
+//            imageView.contentMode = .scaleAspectFit
+//
+//
+//            scrollView.addSubview(imageView)
+//            imageView.frame = CGRect(x: scrollView.frame.width * CGFloat(image - 5), y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
+//        }
+//        scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(4), height: scrollView.frame.height)
+//    }
+//
+        
+        
+        
+//        for image in 5...8 {
+//            let imageToDisplay = UIImage(named: "\(image).png)")
+//            let imageView = UIImageView(image: imageToDisplay)
+//            imageView.contentMode = .scaleAspectFill
+//            let xCoordinate = view.frame.midX + view.frame.width * CGFloat(image)
+//            scrollView.addSubview(imageView)
+//            imageView.frame = CGRect(x: xCoordinate - 2000, y: 0, width: 100, height: 100)
+//        }
+//        scrollView.contentSize = CGSize(width: 2000, height: 100)
+//    }
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print(scrollView.contentOffset)

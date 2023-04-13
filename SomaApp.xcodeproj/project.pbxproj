@@ -30,15 +30,19 @@
 		6A8972A729DDB8F3000B84E2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89729D29DDB8F2000B84E2 /* HomeViewController.swift */; };
 		6A8972A829DDB8F3000B84E2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89729E29DDB8F2000B84E2 /* SignupViewController.swift */; };
 		6A8972A929DDB8F3000B84E2 /* BiddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A89729F29DDB8F2000B84E2 /* BiddingViewController.swift */; };
-		6A8972AA29DDB8F3000B84E2 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8972A029DDB8F2000B84E2 /* HomeTableViewController.swift */; };
 		6A8972AF29DDB958000B84E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8972AE29DDB958000B84E2 /* Main.storyboard */; };
-		6AD054AE29E731DE00039CC2 /* HomepageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD054AD29E731DE00039CC2 /* HomepageStoryboard.storyboard */; };
 		6AD054B029E733E200039CC2 /* AddProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */; };
+		6AD054B229E77D9C00039CC2 /* MyListingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */; };
+		6AD054B429E77E8400039CC2 /* MyListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */; };
+		6AD054B929E7989F00039CC2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD054B529E7989F00039CC2 /* CollectionViewCell.swift */; };
+		6AD054BB29E7989F00039CC2 /* HomepageStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD054B729E7989F00039CC2 /* HomepageStoryboard.storyboard */; };
+		6AD054BC29E7989F00039CC2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD054B829E7989F00039CC2 /* TableViewCell.swift */; };
 		6ADA84C929D06FB800DB1DB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADA84C829D06FB800DB1DB6 /* AppDelegate.swift */; };
 		6ADA84CB29D06FB800DB1DB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADA84CA29D06FB800DB1DB6 /* SceneDelegate.swift */; };
 		6ADA84CD29D06FB800DB1DB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADA84CC29D06FB800DB1DB6 /* ViewController.swift */; };
 		6ADA84D229D06FBA00DB1DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6ADA84D129D06FBA00DB1DB6 /* Assets.xcassets */; };
 		6ADA84D529D06FBA00DB1DB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ADA84D329D06FBA00DB1DB6 /* LaunchScreen.storyboard */; };
+		6AFDE78E29E7A422004E0D37 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFDE78D29E7A422004E0D37 /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,15 +62,17 @@
 		6A74283E29E4E2C500F17BC8 /* DatabaseSaveTestStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatabaseSaveTestStoryboard.storyboard; sourceTree = "<group>"; };
 		6A89729829DDB8F1000B84E2 /* IsaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsaViewController.swift; sourceTree = "<group>"; };
 		6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LogosAssets.xcassets; sourceTree = "<group>"; };
-		6A89729A29DDB8F1000B84E2 /* AddItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 		6A89729C29DDB8F2000B84E2 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		6A89729D29DDB8F2000B84E2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6A89729E29DDB8F2000B84E2 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6A89729F29DDB8F2000B84E2 /* BiddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingViewController.swift; sourceTree = "<group>"; };
-		6A8972A029DDB8F2000B84E2 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		6A8972AE29DDB958000B84E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		6AD054AD29E731DE00039CC2 /* HomepageStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HomepageStoryboard.storyboard; path = ../../../../12aprilHomepageStory/HomepageStoryboard.storyboard; sourceTree = "<group>"; };
 		6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductTableViewController.swift; sourceTree = "<group>"; };
+		6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyListingsStoryboard.storyboard; sourceTree = "<group>"; };
+		6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListingsTableViewController.swift; sourceTree = "<group>"; };
+		6AD054B529E7989F00039CC2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		6AD054B729E7989F00039CC2 /* HomepageStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomepageStoryboard.storyboard; sourceTree = "<group>"; };
+		6AD054B829E7989F00039CC2 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		6ADA84C529D06FB800DB1DB6 /* SomaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADA84C829D06FB800DB1DB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ADA84CA29D06FB800DB1DB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +80,7 @@
 		6ADA84D129D06FBA00DB1DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6ADA84D429D06FBA00DB1DB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6ADA84D629D06FBA00DB1DB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AFDE78D29E7A422004E0D37 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTableViewController.swift; path = SomaApp/HomeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +100,7 @@
 		6ADA84BC29D06FB800DB1DB6 = {
 			isa = PBXGroup;
 			children = (
+				6AFDE78D29E7A422004E0D37 /* HomeTableViewController.swift */,
 				6ADA84C729D06FB800DB1DB6 /* SomaApp */,
 				6ADA84C629D06FB800DB1DB6 /* Products */,
 			);
@@ -110,19 +118,21 @@
 			isa = PBXGroup;
 			children = (
 				6A8972AE29DDB958000B84E2 /* Main.storyboard */,
-				6AD054AD29E731DE00039CC2 /* HomepageStoryboard.storyboard */,
+				6AD054B529E7989F00039CC2 /* CollectionViewCell.swift */,
+				6AD054B729E7989F00039CC2 /* HomepageStoryboard.storyboard */,
+				6AD054B829E7989F00039CC2 /* TableViewCell.swift */,
 				6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */,
-				6A89729A29DDB8F1000B84E2 /* AddItemTableViewController.swift */,
 				6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */,
 				6A410A5529D1BB690010CA31 /* BaderStoryboard.storyboard */,
 				6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */,
 				6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */,
+				6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */,
+				6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */,
 				6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */,
 				6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */,
 				6A410A5729D1BCE00010CA31 /* RaneemStoryboard.storyboard */,
 				6A89729F29DDB8F2000B84E2 /* BiddingViewController.swift */,
 				6A89729C29DDB8F2000B84E2 /* ForgetPasswordViewController.swift */,
-				6A8972A029DDB8F2000B84E2 /* HomeTableViewController.swift */,
 				6A89729D29DDB8F2000B84E2 /* HomeViewController.swift */,
 				6A89729829DDB8F1000B84E2 /* IsaViewController.swift */,
 				6A89729E29DDB8F2000B84E2 /* SignupViewController.swift */,
@@ -219,7 +229,8 @@
 				6ADA84D229D06FBA00DB1DB6 /* Assets.xcassets in Resources */,
 				6A410A5C29D1BCFD0010CA31 /* IsaStoryboard.storyboard in Resources */,
 				6A410A5629D1BB690010CA31 /* BaderStoryboard.storyboard in Resources */,
-				6AD054AE29E731DE00039CC2 /* HomepageStoryboard.storyboard in Resources */,
+				6AD054B229E77D9C00039CC2 /* MyListingsStoryboard.storyboard in Resources */,
+				6AD054BB29E7989F00039CC2 /* HomepageStoryboard.storyboard in Resources */,
 				6A410A5A29D1BCEE0010CA31 /* GhadeerStoryboard.storyboard in Resources */,
 				6A8972A329DDB8F3000B84E2 /* LogosAssets.xcassets in Resources */,
 				6A74283F29E4E2C500F17BC8 /* DatabaseSaveTestStoryboard.storyboard in Resources */,
@@ -235,11 +246,12 @@
 			files = (
 				6ADA84CD29D06FB800DB1DB6 /* ViewController.swift in Sources */,
 				6A8972A829DDB8F3000B84E2 /* SignupViewController.swift in Sources */,
+				6AD054B929E7989F00039CC2 /* CollectionViewCell.swift in Sources */,
 				6ADA84C929D06FB800DB1DB6 /* AppDelegate.swift in Sources */,
 				6A6D6C4229E4527C00C45433 /* StartBidTableViewController.swift in Sources */,
+				6AD054BC29E7989F00039CC2 /* TableViewCell.swift in Sources */,
 				6A6D6C3E29E3B07D00C45433 /* DatabaseTestingViewController.swift in Sources */,
 				6A74283D29E4E2AC00F17BC8 /* DatabaseSaveTestViewController.swift in Sources */,
-				6A8972AA29DDB8F3000B84E2 /* HomeTableViewController.swift in Sources */,
 				6AD054B029E733E200039CC2 /* AddProductTableViewController.swift in Sources */,
 				6A8972A229DDB8F3000B84E2 /* IsaViewController.swift in Sources */,
 				6A8972A629DDB8F3000B84E2 /* ForgetPasswordViewController.swift in Sources */,
@@ -248,7 +260,9 @@
 				6A6D6C4429E4881300C45433 /* SubmitBidTableViewController.swift in Sources */,
 				6ADA84CB29D06FB800DB1DB6 /* SceneDelegate.swift in Sources */,
 				6A8972A929DDB8F3000B84E2 /* BiddingViewController.swift in Sources */,
+				6AD054B429E77E8400039CC2 /* MyListingsTableViewController.swift in Sources */,
 				6A6D6C4029E3B3D700C45433 /* Database.swift in Sources */,
+				6AFDE78E29E7A422004E0D37 /* HomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
