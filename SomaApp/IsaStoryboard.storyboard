@@ -70,15 +70,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="4CA-rZ-I7Q"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="passwordField" destination="jIy-lq-klT" id="bJM-DJ-JgP"/>
                         <outlet property="usernameField" destination="a0J-3I-19s" id="g3q-OL-11D"/>
-                        <segue destination="LKO-Dc-31H" kind="show" identifier="Home" id="5jb-3k-Uff"/>
+                        <segue destination="sFZ-2F-mwL" kind="show" identifier="Home" id="Jtf-ed-TUN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055.7251908396945" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="1154" y="-208"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="CAf-SW-Qgr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="sFZ-2F-mwL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cqL-HX-KAO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuN-cG-aIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2295" y="-323"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="8mu-7i-iFS">
@@ -114,7 +125,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSp-jY-c6F">
-                                <rect key="frame" x="69" y="661" width="262" height="58"/>
+                                <rect key="frame" x="69" y="612" width="262" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="mLF-TP-UsA"/>
                                 </constraints>
@@ -130,19 +141,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhK-kR-GbM">
-                                <rect key="frame" x="94" y="537" width="199.33333333333334" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAU-eL-jYH">
-                                <rect key="frame" x="10" y="579" width="383" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log in"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wme-0m-4CD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -167,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9XL-rk-QWo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2532" y="4"/>
+            <point key="canvasLocation" x="2980" y="-231"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="nfC-Qa-Cin">
@@ -211,12 +209,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYg-lD-gr0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.2" y="685.71428571428578"/>
+            <point key="canvasLocation" x="2831" y="647"/>
         </scene>
         <!--home-->
         <scene sceneID="Rp0-dw-pka">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vjg-XA-ysM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="home" title="home" id="LKO-Dc-31H" customClass="HomeViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EsA-cv-KHp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -243,8 +240,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vjg-XA-ysM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809.9236641221373" y="545.77464788732402"/>
+            <point key="canvasLocation" x="-2122" y="499"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XEL-c2-mSW">
