@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add-->
+        <!--My Listings-->
         <scene sceneID="CsS-8S-33X">
             <objects>
                 <tableViewController id="l0B-jE-uO4" customClass="MyListingsTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -161,7 +161,7 @@
                             <outlet property="delegate" destination="l0B-jE-uO4" id="66i-Gc-P68"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" id="eP8-YM-IYR"/>
+                    <tabBarItem key="tabBarItem" title="My Listings" image="clipboard.fill" catalog="system" id="eP8-YM-IYR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buyItNowLabel" destination="dQb-zi-xt9" id="Ou0-72-YJk"/>
@@ -181,7 +181,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="clipboard.fill" catalog="system" width="103" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
