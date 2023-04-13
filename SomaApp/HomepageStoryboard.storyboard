@@ -42,7 +42,7 @@
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain"/>
                                                             <connections>
-                                                                <segue destination="9Q4-yx-0bP" kind="show" id="DmI-3Q-cw6"/>
+                                                                <segue destination="UGz-aK-BtN" kind="show" id="3Ct-mM-4z6"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -127,9 +127,6 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="146" height="116"/>
                                                                         <state key="normal" title="Button"/>
                                                                         <buttonConfiguration key="configuration" style="plain"/>
-                                                                        <connections>
-                                                                            <segue destination="0RJ-8A-Cl9" kind="show" id="Swe-dk-Ipa"/>
-                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -151,6 +148,28 @@
                                                     </cells>
                                                 </collectionView>
                                             </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="uaE-jU-hJX">
+                                        <rect key="frame" x="0.0" y="630" width="430" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uaE-jU-hJX" id="j3Y-bx-wiL">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duV-ld-MpR">
+                                                    <rect key="frame" x="169" y="12.666666666666664" width="92.333333333333314" height="35"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Add Item"/>
+                                                    <connections>
+                                                        <segue destination="QHe-Zl-2Om" kind="show" id="Ls1-c7-s0x"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="duV-ld-MpR" firstAttribute="centerY" secondItem="j3Y-bx-wiL" secondAttribute="centerY" id="Pvu-op-dXw"/>
+                                                <constraint firstItem="duV-ld-MpR" firstAttribute="centerX" secondItem="j3Y-bx-wiL" secondAttribute="centerX" id="xY5-Dw-NnE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -177,6 +196,16 @@
             </objects>
             <point key="canvasLocation" x="2384.6511627906975" y="622.53218884120179"/>
         </scene>
+        <!--StartBidStoryboard-->
+        <scene sceneID="Mls-nV-6Hk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StartBidStoryboard" id="UGz-aK-BtN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="5WX-s1-4d1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djK-eM-SWD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2967" y="613"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ax4-AP-gBT">
             <objects>
@@ -195,40 +224,10 @@
             </objects>
             <point key="canvasLocation" x="1486.046511627907" y="622.53218884120179"/>
         </scene>
-        <!--GhadeerStoryboard-->
-        <scene sceneID="MfM-eK-ThD">
-            <objects>
-                <viewControllerPlaceholder storyboardName="GhadeerStoryboard" id="9Q4-yx-0bP" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="BHv-nN-4Uf"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oLa-5X-W3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2985" y="572"/>
-        </scene>
-        <!--testingCategory-->
-        <scene sceneID="T0s-C0-GUI">
-            <objects>
-                <viewControllerPlaceholder storyboardName="GhadeerStoryboard" referencedIdentifier="testingCategory" id="0RJ-8A-Cl9" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oh3-rc-0nt"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Slx-Qe-W0y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2985" y="684"/>
-        </scene>
-        <!--DatabaseTestingStoryboard-->
-        <scene sceneID="ZC2-oM-ABK">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DatabaseTestingStoryboard" id="VuZ-ro-mE5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="XET-Vv-KoS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qkE-jv-SOt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2950" y="852"/>
-        </scene>
-        <!--Add Item Table View Controller-->
+        <!--Add Product Table View Controller-->
         <scene sceneID="8oH-5m-8mj">
             <objects>
-                <tableViewController id="QHe-Zl-2Om" customClass="AddItemTableViewController" sceneMemberID="viewController">
+                <tableViewController id="QHe-Zl-2Om" customClass="AddProductTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ye6-TV-0X3">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -596,6 +595,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="plO-5e-vsL"/>
                     <connections>
+                        <outlet property="buyItNowTextField" destination="Tje-vo-rrT" id="4kX-0c-R3u"/>
+                        <outlet property="categoryTextField" destination="2zr-OO-k7g" id="rTJ-nP-ro6"/>
+                        <outlet property="checkMark" destination="FWP-tH-aMk" id="NvN-M6-4sk"/>
+                        <outlet property="descriptionTextField" destination="QuA-Ok-ASn" id="TEn-qb-IXg"/>
+                        <outlet property="genderTextField" destination="7aN-o5-2Ku" id="cNJ-eO-ftx"/>
+                        <outlet property="minimumIncrementTextField" destination="idU-oM-rMN" id="8Ng-zn-bl1"/>
+                        <outlet property="pageControl" destination="beq-Ps-oNE" id="8cM-Yn-cQI"/>
+                        <outlet property="productNameTextField" destination="spQ-69-EUB" id="DA6-lV-PWA"/>
+                        <outlet property="scrollView" destination="7lV-G6-Hr7" id="m65-RK-fds"/>
+                        <outlet property="startingPriceTextField" destination="IdG-C4-geD" id="bNL-Le-Cl0"/>
+                        <outlet property="submitItem" destination="uOB-sG-HBQ" id="z2N-SC-4nL"/>
+                        <outlet property="timeTextField" destination="ZDP-cT-axe" id="gS8-S5-MG0"/>
                         <segue destination="QKC-4Y-KAz" kind="unwind" unwindAction="unwindToHome:" id="N5W-fu-U3t"/>
                     </connections>
                 </tableViewController>

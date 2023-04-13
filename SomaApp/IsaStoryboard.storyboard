@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Isa View Controller-->
+        <!--Sign In-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="login" id="Y6W-OH-hqX" customClass="IsaViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="IsaViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,6 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Sign In" image="door.left.hand.closed" catalog="system" id="2oo-c3-nW4"/>
                     <navigationItem key="navigationItem" id="4CA-rZ-I7Q"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -170,7 +171,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="nfC-Qa-Cin">
             <objects>
-                <viewController id="cmJ-O5-XvX" customClass="ForgotPasswordViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="forgotPasswordRef" id="cmJ-O5-XvX" customClass="ForgotPasswordViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mSr-vv-It4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,6 +265,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="door.left.hand.closed" catalog="system" width="108" height="128"/>
         <image name="soma logo" width="275.33334350585938" height="275.33334350585938"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

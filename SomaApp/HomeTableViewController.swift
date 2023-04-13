@@ -15,6 +15,8 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
 //        fatalError("init(coder:) has not been implemented")
 //    }
     
+    
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -42,6 +44,53 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
     }
     
     
+    func checkForPersmission() {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized:
+                self.dispatchNotification()
+            case .denied:
+                self.dispatchNotification()
+            case .notDetermined:
+                notificationCenter.requestAuthorization(options: [.alert, .sound], completionHandler: {didAllow, error in
+                    if didAllow {
+                        self.dispatchNotification()
+                    }
+                })
+            default:
+                return
+            }
+        }
+    }
+
+    func dispatchNotification() {
+        let identifier = "Soma App notification"
+        let title = "Soma"
+        let body = "new products has been listed, bid now!"
+        let hour = 15
+        let minute = 54
+        let isDaily = true
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let calendar = Calendar.current
+        var dateComponents = DateComponents(calendar: calendar, timeZone: TimeZone.current)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: isDaily)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+        notificationCenter.add(request)
+    }
+    
     @IBOutlet weak var contenMode: UICollectionView!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -52,7 +101,7 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
- 
+ checkForPersmission()
         
         contenMode.delegate = self
         contenMode.dataSource = self

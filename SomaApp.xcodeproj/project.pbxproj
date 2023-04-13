@@ -10,6 +10,8 @@
 		6A0ED76329E4EA5500AE2684 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6A0ED76229E4EA5500AE2684 /* FirebaseAuth */; };
 		6A0ED76529E4EA5500AE2684 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6A0ED76429E4EA5500AE2684 /* FirebaseDatabase */; };
 		6A0ED76729E4EA5500AE2684 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6A0ED76629E4EA5500AE2684 /* FirebaseStorage */; };
+		6A22D40029E827C200586D59 /* EditProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A22D3FF29E827C200586D59 /* EditProfileTVC.swift */; };
+		6A22D40229E827F200586D59 /* CountryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A22D40129E827F200586D59 /* CountryTableViewController.swift */; };
 		6A2B42D229E2E7CA00EC82E0 /* StartBidStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */; };
 		6A410A5429D07D550010CA31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A410A5329D07D540010CA31 /* GoogleService-Info.plist */; };
 		6A410A5629D1BB690010CA31 /* BaderStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A410A5529D1BB690010CA31 /* BaderStoryboard.storyboard */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A22D3FF29E827C200586D59 /* EditProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTVC.swift; sourceTree = "<group>"; };
+		6A22D40129E827F200586D59 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartBidStoryboard.storyboard; sourceTree = "<group>"; };
 		6A410A5329D07D540010CA31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A410A5529D1BB690010CA31 /* BaderStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BaderStoryboard.storyboard; sourceTree = "<group>"; };
@@ -118,19 +122,21 @@
 			isa = PBXGroup;
 			children = (
 				6A8972AE29DDB958000B84E2 /* Main.storyboard */,
-				6AD054B529E7989F00039CC2 /* CollectionViewCell.swift */,
 				6AD054B729E7989F00039CC2 /* HomepageStoryboard.storyboard */,
-				6AD054B829E7989F00039CC2 /* TableViewCell.swift */,
 				6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */,
-				6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */,
 				6A410A5529D1BB690010CA31 /* BaderStoryboard.storyboard */,
-				6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */,
-				6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */,
 				6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */,
-				6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */,
 				6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */,
 				6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */,
 				6A410A5729D1BCE00010CA31 /* RaneemStoryboard.storyboard */,
+				6A22D40129E827F200586D59 /* CountryTableViewController.swift */,
+				6A22D3FF29E827C200586D59 /* EditProfileTVC.swift */,
+				6AD054B529E7989F00039CC2 /* CollectionViewCell.swift */,
+				6AD054B829E7989F00039CC2 /* TableViewCell.swift */,
+				6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */,
+				6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */,
+				6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */,
+				6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */,
 				6A89729F29DDB8F2000B84E2 /* BiddingViewController.swift */,
 				6A89729C29DDB8F2000B84E2 /* ForgetPasswordViewController.swift */,
 				6A89729D29DDB8F2000B84E2 /* HomeViewController.swift */,
@@ -140,11 +146,11 @@
 				6ADA84C829D06FB800DB1DB6 /* AppDelegate.swift */,
 				6ADA84CA29D06FB800DB1DB6 /* SceneDelegate.swift */,
 				6A6D6C3F29E3B3D700C45433 /* Database.swift */,
-				6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */,
 				6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */,
 				6A74283829E4A9F900F17BC8 /* DatabaseLoadImage.swift */,
 				6A74283C29E4E2AC00F17BC8 /* DatabaseSaveTestViewController.swift */,
 				6A74283E29E4E2C500F17BC8 /* DatabaseSaveTestStoryboard.storyboard */,
+				6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */,
 				6ADA84D129D06FBA00DB1DB6 /* Assets.xcassets */,
 				6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */,
 				6ADA84D329D06FBA00DB1DB6 /* LaunchScreen.storyboard */,
@@ -255,6 +261,7 @@
 				6AD054B029E733E200039CC2 /* AddProductTableViewController.swift in Sources */,
 				6A8972A229DDB8F3000B84E2 /* IsaViewController.swift in Sources */,
 				6A8972A629DDB8F3000B84E2 /* ForgetPasswordViewController.swift in Sources */,
+				6A22D40029E827C200586D59 /* EditProfileTVC.swift in Sources */,
 				6A8972A729DDB8F3000B84E2 /* HomeViewController.swift in Sources */,
 				6A74283929E4A9F900F17BC8 /* DatabaseLoadImage.swift in Sources */,
 				6A6D6C4429E4881300C45433 /* SubmitBidTableViewController.swift in Sources */,
@@ -263,6 +270,7 @@
 				6AD054B429E77E8400039CC2 /* MyListingsTableViewController.swift in Sources */,
 				6A6D6C4029E3B3D700C45433 /* Database.swift in Sources */,
 				6AFDE78E29E7A422004E0D37 /* HomeTableViewController.swift in Sources */,
+				6A22D40229E827F200586D59 /* CountryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
