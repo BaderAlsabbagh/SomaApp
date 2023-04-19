@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hKm-QU-mWi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yo-3Q-emj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -8,123 +8,123 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="s0d-6b-0kx">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="listing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5f-rr-ml1">
-                                <rect key="frame" x="174" y="416" width="45" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="211" translatesAutoresizingMaskIntoConstraints="NO" id="S9K-7Y-rcl">
-                                <rect key="frame" x="16" y="59" width="361" height="31"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFJ-pq-hE2">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Bidding">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="hKm-QU-mWi" kind="show" id="Iyp-Ye-aey"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJF-wm-Luu">
-                                        <rect key="frame" x="286" y="0.0" width="75" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Listing">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="dFJ-pq-hE2" firstAttribute="leading" secondItem="S9K-7Y-rcl" secondAttribute="leading" id="QFY-Y9-Eob"/>
-                                    <constraint firstItem="dFJ-pq-hE2" firstAttribute="top" secondItem="S9K-7Y-rcl" secondAttribute="top" id="S8b-5S-v0C"/>
-                                    <constraint firstItem="tJF-wm-Luu" firstAttribute="top" secondItem="S9K-7Y-rcl" secondAttribute="top" id="i62-j0-7It"/>
-                                    <constraint firstAttribute="trailing" secondItem="tJF-wm-Luu" secondAttribute="trailing" id="ss5-iM-PCZ"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="J5f-rr-ml1" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="257-8D-itF"/>
-                            <constraint firstItem="J5f-rr-ml1" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="8VB-yP-7jn"/>
-                            <constraint firstItem="S9K-7Y-rcl" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="NNE-yx-lim"/>
-                            <constraint firstItem="S9K-7Y-rcl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="NU2-3B-4eC"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="S9K-7Y-rcl" secondAttribute="trailing" constant="16" id="tac-ps-DpX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="abc-WI-o9M"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-294" y="46"/>
-        </scene>
-        <!--View Controller-->
+        <!--Bidding Listing View Controller-->
         <scene sceneID="FqJ-2J-p2p">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hKm-QU-mWi" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hKm-QU-mWi" customClass="BiddingListingViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jKd-j4-wuK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="211" translatesAutoresizingMaskIntoConstraints="NO" id="Qyr-G4-cr5">
-                                <rect key="frame" x="16" y="75" width="361" height="31"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7I-XN-wxm">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Bidding" titleAlignment="automatic">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                        </buttonConfiguration>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUg-qo-grD">
-                                        <rect key="frame" x="286" y="0.0" width="75" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Listing">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
-                                        </buttonConfiguration>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdV-KE-LTw">
+                                <rect key="frame" x="0.0" y="142" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="105" id="58D-co-KVJ" customClass="BiddingListingTableViewCell" customModule="SomaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="58D-co-KVJ" id="p5Q-pn-U0f">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best-bracelets-mens-1465x1099-c-center" translatesAutoresizingMaskIntoConstraints="NO" id="M5J-bm-lJp">
+                                                    <rect key="frame" x="0.0" y="-43" width="173" height="148"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your bid: BD 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-ho-wlH">
+                                                    <rect key="frame" x="258" y="44" width="115" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current bid: BD 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-pX-RuP">
+                                                    <rect key="frame" x="236" y="73" width="137" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mont blanc braclate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-sh-VO0">
+                                                    <rect key="frame" x="170" y="0.0" width="148" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="M5J-bm-lJp" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="-43" id="7UX-8g-hib"/>
+                                                <constraint firstAttribute="bottom" secondItem="M5J-bm-lJp" secondAttribute="bottom" id="cXG-a9-qML"/>
+                                                <constraint firstItem="M5J-bm-lJp" firstAttribute="leading" secondItem="p5Q-pn-U0f" secondAttribute="leading" id="jAq-Rh-RPy"/>
+                                                <constraint firstAttribute="trailing" secondItem="M5J-bm-lJp" secondAttribute="trailing" constant="220" id="mnU-yO-sS0"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Y6W-OH-hqX" kind="show" id="ROT-nY-VWC"/>
+                                            <outlet property="biddingImage" destination="M5J-bm-lJp" id="BnL-xx-hEP"/>
+                                            <outlet property="currentBid" destination="cD9-pX-RuP" id="K2h-i3-vYp"/>
+                                            <outlet property="title" destination="Ame-sh-VO0" id="0qj-mm-G9P"/>
+                                            <outlet property="yourBid" destination="ZLY-ho-wlH" id="APh-sO-qLi"/>
                                         </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="QUg-qo-grD" secondAttribute="trailing" id="UZ0-r8-Gui"/>
-                                    <constraint firstItem="QUg-qo-grD" firstAttribute="top" secondItem="Qyr-G4-cr5" secondAttribute="top" id="f66-Ur-rwO"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bidding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd6-SW-vNA">
-                                <rect key="frame" x="175" y="416" width="57" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hKm-QU-mWi" id="fyt-gN-oca"/>
+                                    <outlet property="delegate" destination="hKm-QU-mWi" id="9SC-ou-k3t"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-RR-HRp">
+                                <rect key="frame" x="0.0" y="103" width="393" height="32"/>
+                                <segments>
+                                    <segment title="Biddings"/>
+                                    <segment title="Listings"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d2a-9R-B6f"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Qyr-G4-cr5" firstAttribute="top" secondItem="d2a-9R-B6f" secondAttribute="top" constant="16" id="Dpt-tm-tzc"/>
-                            <constraint firstItem="d2a-9R-B6f" firstAttribute="trailing" secondItem="Qyr-G4-cr5" secondAttribute="trailing" constant="16" id="dNh-BL-Wdr"/>
-                            <constraint firstItem="Qyr-G4-cr5" firstAttribute="leading" secondItem="d2a-9R-B6f" secondAttribute="leading" constant="16" id="f0k-db-KZc"/>
+                            <constraint firstAttribute="bottom" secondItem="NdV-KE-LTw" secondAttribute="bottom" id="6pY-JC-U8H"/>
+                            <constraint firstItem="NdV-KE-LTw" firstAttribute="top" secondItem="B6e-RR-HRp" secondAttribute="bottom" constant="8" symbolic="YES" id="73F-Mm-Z01"/>
+                            <constraint firstItem="NdV-KE-LTw" firstAttribute="leading" secondItem="jKd-j4-wuK" secondAttribute="leading" id="8Ga-UA-hnS"/>
+                            <constraint firstItem="B6e-RR-HRp" firstAttribute="top" secondItem="d2a-9R-B6f" secondAttribute="top" id="RRD-Rh-9Sc"/>
+                            <constraint firstItem="B6e-RR-HRp" firstAttribute="trailing" secondItem="d2a-9R-B6f" secondAttribute="trailing" id="f7a-d2-uJI"/>
+                            <constraint firstAttribute="trailing" secondItem="NdV-KE-LTw" secondAttribute="trailing" id="gUt-zR-YyK"/>
+                            <constraint firstItem="B6e-RR-HRp" firstAttribute="leading" secondItem="d2a-9R-B6f" secondAttribute="leading" id="tJh-L9-b08"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="19m-LR-3z5"/>
+                    <navigationItem key="navigationItem" id="19m-LR-3z5">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="B6e-RR-HRp" id="SVt-Mt-hck"/>
+                        <outlet property="tableView" destination="NdV-KE-LTw" id="tco-du-0FJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inK-ox-dMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414.5038167938931" y="45.774647887323944"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kfC-sO-xTp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9yo-3Q-emj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eFz-hl-MNF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hKm-QU-mWi" kind="relationship" relationship="rootViewController" id="mUN-Cm-aNY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yQe-SC-Ff9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="487.78625954198469" y="45.774647887323944"/>
         </scene>
     </scenes>
     <resources>
+        <image name="best-bracelets-mens-1465x1099-c-center" width="1099" height="1099"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
