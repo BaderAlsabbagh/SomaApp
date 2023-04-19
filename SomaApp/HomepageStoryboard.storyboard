@@ -269,9 +269,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="430" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGB-9Q-GAH">
-                                                    <rect key="frame" x="147" y="4" width="138" height="35"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGB-9Q-GAH">
+                                                    <rect key="frame" x="146" y="6.3333333333333321" width="138" height="34.333333333333343"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Upload Images"/>
                                                     <connections>
@@ -279,6 +278,10 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bGB-9Q-GAH" firstAttribute="centerX" secondItem="fXn-4S-kFa" secondAttribute="centerX" id="S35-YV-vLV"/>
+                                                <constraint firstItem="bGB-9Q-GAH" firstAttribute="centerY" secondItem="fXn-4S-kFa" secondAttribute="centerY" id="eRo-JB-CNy"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
