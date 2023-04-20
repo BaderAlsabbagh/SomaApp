@@ -9,7 +9,7 @@ import Foundation
 
 class UpdateBid {
 
-    static var updatedBid: UpdateBid = UpdateBid(bid: "fuck u")
+    static var updatedBid: UpdateBid = UpdateBid(bid: "")
     
     var bid: String
     init(bid: String) {
