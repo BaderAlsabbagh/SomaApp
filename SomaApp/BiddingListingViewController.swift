@@ -17,7 +17,7 @@ class BiddingListingViewController: UIViewController, UITableViewDelegate, UITab
     var biddings = [Bidding]()
     var listings = [Listing]()
     
-    let myBidding1 = Bidding(image: UIImage(named: "L1070963")!, title: "glasses", currentBid: "Current Bid: 143 BHD", yourBid: "Your Bid: 450 BHD")
+    let myBidding1 = Bidding(image: UIImage(named: "L1070963")!, title: "glasses123123 glasses", currentBid: "Current Bid: 14 BHD", yourBid: "Your Bid: 45 BHD")
     let myBidding2 = Bidding(image: UIImage(named: "best-bracelets-mens-1465x1099-c-center")!, title: "bracelet", currentBid: "Current Bid: 20 BHD", yourBid: "Your Bid: 20 BHD")
     let myListing1 = Listing(image: UIImage(named: "men-sunglasses-500x500.jpg")!, title: "My Glasses", PriceSold: "55 BHD", yourBid: "")
     
