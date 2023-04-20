@@ -71,6 +71,7 @@ class StartBidTableViewController: UITableViewController {
         }
         
         // Bid updater
+        // Create a database reference
         let productRef = Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u")
         
         // Observe changes in the product node
@@ -78,7 +79,12 @@ class StartBidTableViewController: UITableViewController {
             
             // Get the product data from the snapshot
             let productData = snapshot.value as? [String: Any] ?? [:]
-            
+        
+            let productName = productData["productName"] as? String ?? "N/A"
+            self.productNameLabel.text = "\(productName)"
+         
+            let productDescription = productData["description"] as? String ?? "N/A"
+            self.productDescriptionLabel.text = productDescription
             
             // Get the current bid and update the label
             let currentBid = productData["currentBid"] as? String ?? "N/A"
