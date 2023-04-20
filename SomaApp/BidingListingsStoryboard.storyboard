@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Bidding Listing View Controller-->
+        <!--History-->
         <scene sceneID="FqJ-2J-p2p">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hKm-QU-mWi" customClass="BiddingListingViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdV-KE-LTw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NdV-KE-LTw">
                                 <rect key="frame" x="0.0" y="142" width="393" height="710"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="105" id="58D-co-KVJ" customClass="BiddingListingTableViewCell" customModule="SomaApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="105"/>
@@ -27,36 +26,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best-bracelets-mens-1465x1099-c-center" translatesAutoresizingMaskIntoConstraints="NO" id="M5J-bm-lJp">
-                                                    <rect key="frame" x="0.0" y="-43" width="173" height="148"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your bid: BD 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-ho-wlH">
-                                                    <rect key="frame" x="258" y="44" width="115" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your bid: BD 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-ho-wlH">
+                                                    <rect key="frame" x="247" y="44" width="126" height="21"/>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current bid: BD 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-pX-RuP">
-                                                    <rect key="frame" x="236" y="73" width="137" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current bid: BD 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-pX-RuP">
+                                                    <rect key="frame" x="247" y="73" width="126" height="21"/>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mont blanc braclate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-sh-VO0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mont blanc braclate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-sh-VO0">
                                                     <rect key="frame" x="170" y="0.0" width="148" height="25"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" misplaced="YES" image="best-bracelets-mens-1465x1099-c-center" translatesAutoresizingMaskIntoConstraints="NO" id="M5J-bm-lJp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="M5J-bm-lJp" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="-43" id="7UX-8g-hib"/>
-                                                <constraint firstAttribute="bottom" secondItem="M5J-bm-lJp" secondAttribute="bottom" id="cXG-a9-qML"/>
-                                                <constraint firstItem="M5J-bm-lJp" firstAttribute="leading" secondItem="p5Q-pn-U0f" secondAttribute="leading" id="jAq-Rh-RPy"/>
-                                                <constraint firstAttribute="trailing" secondItem="M5J-bm-lJp" secondAttribute="trailing" constant="220" id="mnU-yO-sS0"/>
+                                                <constraint firstAttribute="bottom" secondItem="M5J-bm-lJp" secondAttribute="bottom" constant="-550" id="32M-bE-HSF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ame-sh-VO0" secondAttribute="trailing" constant="75" id="40B-MF-eo3"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZLY-ho-wlH" secondAttribute="bottom" constant="40" id="5Qn-lB-hPp"/>
+                                                <constraint firstItem="ZLY-ho-wlH" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="44" id="6bV-an-afI"/>
+                                                <constraint firstItem="M5J-bm-lJp" firstAttribute="leading" secondItem="p5Q-pn-U0f" secondAttribute="leading" id="8Pj-V2-QQp"/>
+                                                <constraint firstItem="cD9-pX-RuP" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="73" id="B9N-Ca-eol"/>
+                                                <constraint firstAttribute="trailing" secondItem="cD9-pX-RuP" secondAttribute="trailing" constant="20" symbolic="YES" id="DzE-uI-3l6"/>
+                                                <constraint firstItem="M5J-bm-lJp" firstAttribute="centerY" secondItem="p5Q-pn-U0f" secondAttribute="centerY" id="IDk-8r-Cpu"/>
+                                                <constraint firstItem="ZLY-ho-wlH" firstAttribute="leading" secondItem="M5J-bm-lJp" secondAttribute="trailing" constant="100" id="Xn9-MZ-WNi"/>
+                                                <constraint firstItem="Ame-sh-VO0" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" id="bmN-gs-2RJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZLY-ho-wlH" secondAttribute="trailing" constant="20" symbolic="YES" id="dWf-Mt-E0n"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ame-sh-VO0" secondAttribute="bottom" constant="80" id="fF3-OX-ykP"/>
+                                                <constraint firstAttribute="bottom" secondItem="cD9-pX-RuP" secondAttribute="bottom" constant="11" id="pFM-vD-bqG"/>
+                                                <constraint firstItem="cD9-pX-RuP" firstAttribute="leading" secondItem="M5J-bm-lJp" secondAttribute="trailing" constant="100" id="saR-AK-bBh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -92,9 +98,11 @@
                             <constraint firstItem="B6e-RR-HRp" firstAttribute="leading" secondItem="d2a-9R-B6f" secondAttribute="leading" id="tJh-L9-b08"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="History" image="clipboard.fill" catalog="system" id="wop-Us-mft"/>
                     <navigationItem key="navigationItem" id="19m-LR-3z5">
                         <nil key="title"/>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="segment" destination="B6e-RR-HRp" id="SVt-Mt-hck"/>
                         <outlet property="tableView" destination="NdV-KE-LTw" id="tco-du-0FJ"/>
@@ -125,6 +133,7 @@
     </scenes>
     <resources>
         <image name="best-bracelets-mens-1465x1099-c-center" width="1099" height="1099"/>
+        <image name="clipboard.fill" catalog="system" width="103" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
