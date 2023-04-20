@@ -110,6 +110,9 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
         
         let imageWidth: CGFloat = 350.0
         let imageHeight: CGFloat = 300.0
+        let buttonWidth: CGFloat = 350.0
+        let buttonHeight: CGFloat = 300.0
+        
         
         for image in 5...8 {
             let imageToDisplay = UIImage(named: "\(image).png)")
@@ -118,7 +121,7 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
             
             // Set the size of the image view
             imageView.frame = CGRect(x: scrollView.frame.width * CGFloat(image - 5), y: 0, width: imageWidth, height: imageHeight)
-            
+            let buttonView = UIButton(frame: CGRect(x: scrollView.frame.width * CGFloat(image - 5), y: 0, width: imageWidth, height: imageHeight))
             // Set the corner radius based on the image view's width and height
             imageView.layer.cornerRadius = 20.0
             imageView.clipsToBounds = true
