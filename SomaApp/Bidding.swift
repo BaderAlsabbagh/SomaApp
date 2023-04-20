@@ -20,7 +20,7 @@ struct Listing {
     var image: UIImage
     var title: String
     var PriceSold: String
- 
+    var yourBid: String
     
 }
 

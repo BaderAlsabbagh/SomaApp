@@ -19,15 +19,14 @@ class BiddingListingViewController: UIViewController, UITableViewDelegate, UITab
     
     let myBidding1 = Bidding(image: UIImage(named: "L1070963")!, title: "glasses", currentBid: "Current Bid: 143 BHD", yourBid: "Your Bid: 450 BHD")
     let myBidding2 = Bidding(image: UIImage(named: "best-bracelets-mens-1465x1099-c-center")!, title: "bracelet", currentBid: "Current Bid: 20 BHD", yourBid: "Your Bid: 20 BHD")
-    
+    let myListing1 = Listing(image: UIImage(named: "men-sunglasses-500x500.jpg")!, title: "My Glasses", PriceSold: "55 BHD", yourBid: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchBiddingData()
-        
-        biddings.append(myBidding1)
-        biddings.append(myBidding2)
-        
+        fetchBiddingData(forImageUuid: "bag1.jpeg", childNode: "-NSuT8UljmhwFz4t9GYt")
+        fetchBiddingData(forImageUuid: "watch1.jpeg", childNode: "-NSutl7WwKeAFcyF_-6n")
+        fetchBiddingData(forImageUuid: "shoe1.jpeg", childNode: "-NTJ_Vq7WnfvvVejA3bL")
+        fetchListingData(forImageUuid: "glasses1.jpeg", childNode: "-NSuftOZaGStReVyBnHK")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -64,43 +63,62 @@ class BiddingListingViewController: UIViewController, UITableViewDelegate, UITab
             cell.currentBid.text = bidding.currentBid
             cell.yourBid.text = bidding.yourBid
         } else if let listing = object as? Listing {
-            // Set the cell's properties based on the listing object
+            cell.biddingImage.image = listing.image
+            cell.title.text = listing.title
+            cell.currentBid.text = listing.PriceSold
+            
         }
         
         return cell
     }
     
-
+    
     // Function to fetch data from Firebase
-    func fetchBiddingData() {
-        //Load Image
-        let imageUuid = "tissotWatch.png"
+    func fetchBiddingData(forImageUuid imageUuid: String, childNode: String) {
         ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
             if let error = error {
                 print("Error downloading image: \(error.localizedDescription)")
             } else if let image = image {
-                // Fetch the data
-                Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u").observeSingleEvent(of: .value, with: { snapshot in
+                Database.Products.products.child(childNode).observeSingleEvent(of: .value, with: { snapshot in
                     guard let data = snapshot.value as? [String: Any] else {
                         return
                     }
                     
-                    // Create a Bidding object using the fetched data and downloaded image
                     let bidding = Bidding(image: image,
                                           title: data["productName"] as? String ?? "",
                                           currentBid: "Current Bid: \(data["currentBid"] as? String ?? "") BHD",
                                           yourBid: "Your Bid: \(data["currentBid"] as? String ?? "") BHD")
                     
-                    // Append the Bidding object to the biddings array
                     self?.biddings.append(bidding)
-                    
-                    // Reload the data in your table view or collection view
                     self?.tableView.reloadData()
                 }) { error in
                     print("Error: \(error.localizedDescription)")
                 }
             }
         }
-        
+    }
+    func fetchListingData(forImageUuid imageUuid: String, childNode: String) {
+        ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+            } else if let image = image {
+                Database.Products.products.child(childNode).observeSingleEvent(of: .value, with: { snapshot in
+                    guard let data = snapshot.value as? [String: Any] else {
+                        return
+                    }
+                    
+                    let listing = Listing(image: image, title: data["productName"] as! String, PriceSold: "Starting Price: \(data["currentBid"])", yourBid: "")
+                    self?.listings.append(listing)
+                    self?.tableView.reloadData()
+                }) { error in
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+        }
     }
 }
+   
+
+   
+   
+
