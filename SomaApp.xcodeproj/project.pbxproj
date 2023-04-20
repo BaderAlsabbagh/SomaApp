@@ -11,6 +11,7 @@
 		6A0BCC6129F169F2000B7787 /* CategoriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BCC6029F169F2000B7787 /* CategoriesCollectionViewController.swift */; };
 		6A0BCC6329F16A9E000B7787 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BCC6229F16A9E000B7787 /* Item.swift */; };
 		6A0BCC6529F16B8F000B7787 /* CategoriesItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BCC6429F16B8F000B7787 /* CategoriesItemsCollectionViewCell.swift */; };
+		6A0BCC6729F18BC4000B7787 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BCC6629F18BC4000B7787 /* ProductListTableViewController.swift */; };
 		6A0ED76329E4EA5500AE2684 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6A0ED76229E4EA5500AE2684 /* FirebaseAuth */; };
 		6A0ED76529E4EA5500AE2684 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6A0ED76429E4EA5500AE2684 /* FirebaseDatabase */; };
 		6A0ED76729E4EA5500AE2684 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6A0ED76629E4EA5500AE2684 /* FirebaseStorage */; };
@@ -61,6 +62,7 @@
 		6A0BCC6029F169F2000B7787 /* CategoriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewController.swift; sourceTree = "<group>"; };
 		6A0BCC6229F16A9E000B7787 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6A0BCC6429F16B8F000B7787 /* CategoriesItemsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		6A0BCC6629F18BC4000B7787 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
 		6A22D3FF29E827C200586D59 /* EditProfileTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileTVC.swift; sourceTree = "<group>"; };
 		6A22D40129E827F200586D59 /* CountryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewController.swift; sourceTree = "<group>"; };
 		6A22D40329F07C3800586D59 /* UpdateBid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBid.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */,
 				6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */,
 				6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */,
+				6A0BCC6629F18BC4000B7787 /* ProductListTableViewController.swift */,
 				6A0BCC6029F169F2000B7787 /* CategoriesCollectionViewController.swift */,
 				6A0BCC6429F16B8F000B7787 /* CategoriesItemsCollectionViewCell.swift */,
 				6A0BCC6229F16A9E000B7787 /* Item.swift */,
@@ -301,6 +304,7 @@
 				6A6D6C4429E4881300C45433 /* SubmitBidTableViewController.swift in Sources */,
 				6ADA84CB29D06FB800DB1DB6 /* SceneDelegate.swift in Sources */,
 				6A22D40429F07C3800586D59 /* UpdateBid.swift in Sources */,
+				6A0BCC6729F18BC4000B7787 /* ProductListTableViewController.swift in Sources */,
 				6AB0579929F0C14A00CF985F /* BiddingListingTableViewCell.swift in Sources */,
 				6A8972A929DDB8F3000B84E2 /* BiddingViewController.swift in Sources */,
 				6AD054B429E77E8400039CC2 /* MyListingsTableViewController.swift in Sources */,

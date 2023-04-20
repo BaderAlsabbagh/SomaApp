@@ -15,15 +15,17 @@ class CategoriesCollectionViewController: UICollectionViewController {
     
     var items = [Item]()
 
+    let myItem1 = Item(image: UIImage(named: "Image 1")!, itemName: "Apple Watch", timeLeft: "01:27", description: "Black w/ leather strap")
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        items.append(myItem1)
+        print(items,"hello")
         // Do any additional setup after loading the view.
     }
 
