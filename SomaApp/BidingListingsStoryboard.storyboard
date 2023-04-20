@@ -39,7 +39,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mont blanc braclate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ame-sh-VO0">
-                                                    <rect key="frame" x="170" y="0.0" width="148" height="25"/>
+                                                    <rect key="frame" x="145" y="0.0" width="148" height="25"/>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -49,8 +49,8 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="M5J-bm-lJp" secondAttribute="bottom" constant="-550" id="32M-bE-HSF"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ame-sh-VO0" secondAttribute="trailing" constant="75" id="40B-MF-eo3"/>
+                                                <constraint firstAttribute="bottom" secondItem="M5J-bm-lJp" secondAttribute="bottom" constant="-610" id="32M-bE-HSF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ame-sh-VO0" secondAttribute="trailing" constant="100" id="40B-MF-eo3"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZLY-ho-wlH" secondAttribute="bottom" constant="40" id="5Qn-lB-hPp"/>
                                                 <constraint firstItem="ZLY-ho-wlH" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="44" id="6bV-an-afI"/>
                                                 <constraint firstItem="M5J-bm-lJp" firstAttribute="leading" secondItem="p5Q-pn-U0f" secondAttribute="leading" id="8Pj-V2-QQp"/>
