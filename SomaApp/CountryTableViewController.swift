@@ -8,19 +8,7 @@
 import UIKit
 
 class CountryTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    
-    @IBOutlet var picker: UIPickerView!
-    
-    let countries = ["Bahrain", "Saudi Arabia", "Qatar", "UAE", "Kuwait", "Oman"]
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-              
-        
-        // Do any additional setup after loading the view.
-    }
-
+ 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -32,8 +20,21 @@ class CountryTableViewController: UITableViewController, UIPickerViewDataSource,
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return countries[row]
     }
+
     
-}    // MARK: - Table view data source
+    @IBAction func saveButton(_ sender: UIButton) {
+    }
+    
+    @IBOutlet var picker: UIPickerView!
+    
+    let countries = ["Bahrain", "Saudi Arabia", "Qatar", "UAE", "Kuwait", "Oman"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+}
+      // MARK: - Table view data source
 
 //func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
