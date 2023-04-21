@@ -11,16 +11,28 @@ import FirebaseDatabase
 
 
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        firstName.delegate = self
+        firstName.tag = 0
+        lastName.tag = 1
+        Username.tag = 2
+        email.tag = 3
+        password.tag = 4
+        
+        
+        self.hideKeyboardWhenTappedAround()
         
         // Do any additional setup after loading the view.
     }
     
     @IBOutlet var firstName: UITextField!
     
+    @IBOutlet var Username: UITextField!
     
     @IBOutlet var lastName: UITextField!
     
@@ -28,7 +40,7 @@ class SignupViewController: UIViewController {
     
     @IBOutlet var password: UITextField!
     
-    
+
     
     @IBAction func signUp(_ sender: UIButton) {
         
@@ -80,7 +92,30 @@ class SignupViewController: UIViewController {
                     
                 })
             }
+    
+   
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          // Try to find next responder
+        textField.resignFirstResponder()
+           let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField
+             nextField?.becomeFirstResponder()
+          
+             // Not found, so remove keyboard.
+             
+          
+          // Do not add a line break
+          return false
+       }
+    
+   
+    
+    
+    
+    
     }
+    
+    
     
    
     

@@ -43,6 +43,8 @@
 		6AB0579B29F0C18700CF985F /* BidingListingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AB0579A29F0C18700CF985F /* BidingListingsStoryboard.storyboard */; };
 		6AB0579E29F0C1A400CF985F /* BiddingListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0579C29F0C1A400CF985F /* BiddingListingViewController.swift */; };
 		6AB0579F29F0C1A400CF985F /* Bidding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB0579D29F0C1A400CF985F /* Bidding.swift */; };
+		6AC64B8629F27FC50063D727 /* WomenCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC64B8529F27FC50063D727 /* WomenCategoriesViewController.swift */; };
+		6AC64B8829F2849C0063D727 /* MenCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC64B8729F2849C0063D727 /* MenCategoriesViewController.swift */; };
 		6AD054B029E733E200039CC2 /* AddProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */; };
 		6AD054B229E77D9C00039CC2 /* MyListingsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */; };
 		6AD054B429E77E8400039CC2 /* MyListingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */; };
@@ -91,6 +93,8 @@
 		6AB0579A29F0C18700CF985F /* BidingListingsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BidingListingsStoryboard.storyboard; sourceTree = "<group>"; };
 		6AB0579C29F0C1A400CF985F /* BiddingListingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiddingListingViewController.swift; sourceTree = "<group>"; };
 		6AB0579D29F0C1A400CF985F /* Bidding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bidding.swift; sourceTree = "<group>"; };
+		6AC64B8529F27FC50063D727 /* WomenCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WomenCategoriesViewController.swift; sourceTree = "<group>"; };
+		6AC64B8729F2849C0063D727 /* MenCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenCategoriesViewController.swift; sourceTree = "<group>"; };
 		6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductTableViewController.swift; sourceTree = "<group>"; };
 		6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyListingsStoryboard.storyboard; sourceTree = "<group>"; };
 		6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListingsTableViewController.swift; sourceTree = "<group>"; };
@@ -148,13 +152,18 @@
 				6AB0579829F0C14A00CF985F /* BiddingListingTableViewCell.swift */,
 				6A22D40329F07C3800586D59 /* UpdateBid.swift */,
 				6AD054B729E7989F00039CC2 /* HomepageStoryboard.storyboard */,
+				6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */,
 				6AFDE78D29E7A422004E0D37 /* HomeTableViewController.swift */,
+				6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */,
+				6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */,
 				6A2B42D129E2E7CA00EC82E0 /* StartBidStoryboard.storyboard */,
 				6A410A5529D1BB690010CA31 /* BaderStoryboard.storyboard */,
 				6AD054B129E77D9C00039CC2 /* MyListingsStoryboard.storyboard */,
 				6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */,
 				6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */,
-				6A0BCC6629F18BC4000B7787 /* ProductListTableViewController.swift */,
+        6A0BCC6629F18BC4000B7787 /* ProductListTableViewController.swift */,
+				6AC64B8729F2849C0063D727 /* MenCategoriesViewController.swift */,
+				6AC64B8529F27FC50063D727 /* WomenCategoriesViewController.swift */,
 				6A0BCC6029F169F2000B7787 /* CategoriesCollectionViewController.swift */,
 				6A0BCC6429F16B8F000B7787 /* CategoriesItemsCollectionViewCell.swift */,
 				6A0BCC6229F16A9E000B7787 /* Item.swift */,
@@ -163,9 +172,6 @@
 				6A22D3FF29E827C200586D59 /* EditProfileTVC.swift */,
 				6AD054B529E7989F00039CC2 /* CollectionViewCell.swift */,
 				6AD054B829E7989F00039CC2 /* TableViewCell.swift */,
-				6AD054AF29E733E200039CC2 /* AddProductTableViewController.swift */,
-				6A6D6C4129E4527C00C45433 /* StartBidTableViewController.swift */,
-				6A6D6C4329E4881300C45433 /* SubmitBidTableViewController.swift */,
 				6AD054B329E77E8400039CC2 /* MyListingsTableViewController.swift */,
 				6A89729F29DDB8F2000B84E2 /* BiddingViewController.swift */,
 				6A89729C29DDB8F2000B84E2 /* ForgetPasswordViewController.swift */,
@@ -282,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6ADA84CD29D06FB800DB1DB6 /* ViewController.swift in Sources */,
+				6AC64B8629F27FC50063D727 /* WomenCategoriesViewController.swift in Sources */,
 				6A0BCC6129F169F2000B7787 /* CategoriesCollectionViewController.swift in Sources */,
 				6A8972A829DDB8F3000B84E2 /* SignupViewController.swift in Sources */,
 				6AD054B929E7989F00039CC2 /* CollectionViewCell.swift in Sources */,
@@ -291,6 +298,7 @@
 				6ADA84C929D06FB800DB1DB6 /* AppDelegate.swift in Sources */,
 				6A6D6C4229E4527C00C45433 /* StartBidTableViewController.swift in Sources */,
 				6AD054BC29E7989F00039CC2 /* TableViewCell.swift in Sources */,
+				6AC64B8829F2849C0063D727 /* MenCategoriesViewController.swift in Sources */,
 				6A0BCC5F29F163AF000B7787 /* ProfileTableViewController.swift in Sources */,
 				6A6D6C3E29E3B07D00C45433 /* DatabaseTestingViewController.swift in Sources */,
 				6A74283D29E4E2AC00F17BC8 /* DatabaseSaveTestViewController.swift in Sources */,

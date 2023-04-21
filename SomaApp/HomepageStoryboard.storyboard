@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eNU-wY-nvt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yDt-SZ-7mE">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -150,28 +150,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="60" id="uaE-jU-hJX">
-                                        <rect key="frame" x="0.0" y="630" width="430" height="60"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uaE-jU-hJX" id="j3Y-bx-wiL">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="60"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duV-ld-MpR">
-                                                    <rect key="frame" x="169" y="12.666666666666664" width="92.333333333333314" height="35"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Add Item"/>
-                                                    <connections>
-                                                        <segue destination="QHe-Zl-2Om" kind="show" id="Ls1-c7-s0x"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="duV-ld-MpR" firstAttribute="centerY" secondItem="j3Y-bx-wiL" secondAttribute="centerY" id="Pvu-op-dXw"/>
-                                                <constraint firstItem="duV-ld-MpR" firstAttribute="centerX" secondItem="j3Y-bx-wiL" secondAttribute="centerX" id="xY5-Dw-NnE"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -224,10 +202,10 @@
             </objects>
             <point key="canvasLocation" x="1486.046511627907" y="622.53218884120179"/>
         </scene>
-        <!--Add Product Table View Controller-->
+        <!--Add-->
         <scene sceneID="8oH-5m-8mj">
             <objects>
-                <tableViewController id="QHe-Zl-2Om" customClass="AddProductTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddProductStoryboard" id="QHe-Zl-2Om" customClass="AddProductTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ye6-TV-0X3">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -577,7 +555,6 @@
                                                     <buttonConfiguration key="configuration" style="filled" title="Submit Item"/>
                                                     <connections>
                                                         <action selector="submitItemButtonPressed:" destination="QHe-Zl-2Om" eventType="touchUpInside" id="RVL-9C-DoD"/>
-                                                        <segue destination="QKC-4Y-KAz" kind="unwind" unwindAction="unwindToHome:" id="d4B-zd-sq2"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -596,7 +573,9 @@
                             <outlet property="delegate" destination="QHe-Zl-2Om" id="D0g-pY-kYx"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" id="ppl-kY-XNX"/>
                     <navigationItem key="navigationItem" id="plO-5e-vsL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buyItNowTextField" destination="Tje-vo-rrT" id="4kX-0c-R3u"/>
                         <outlet property="categoryTextField" destination="2zr-OO-k7g" id="rTJ-nP-ro6"/>
@@ -610,7 +589,7 @@
                         <outlet property="startingPriceTextField" destination="IdG-C4-geD" id="bNL-Le-Cl0"/>
                         <outlet property="submitItem" destination="uOB-sG-HBQ" id="z2N-SC-4nL"/>
                         <outlet property="timeTextField" destination="ZDP-cT-axe" id="gS8-S5-MG0"/>
-                        <segue destination="QKC-4Y-KAz" kind="unwind" unwindAction="unwindToHome:" id="N5W-fu-U3t"/>
+                        <segue destination="QKC-4Y-KAz" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="N5W-fu-U3t"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hUJ-Yx-6S1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -624,6 +603,7 @@
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
