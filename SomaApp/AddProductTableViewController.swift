@@ -27,6 +27,10 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     
+    @IBOutlet weak var conditionTextField: UITextField!
+    
+    @IBOutlet weak var brandTextField: UITextField!
+    
     @IBOutlet weak var checkMark: UIButton!
     @IBOutlet weak var submitItem: UIButton!
     
@@ -184,7 +188,9 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
                 "buyItNow": self.buyItNowTextField.text,
                 "timePeriod": self.timeTextField.text,
                 "category": self.categoryTextField.text,
-                "gender": self.genderTextField.text
+                "gender": self.genderTextField.text,
+                "brand": self.brandTextField.text,
+                "condition": self.conditionTextField.text
             ]
             
             // Create a database reference
