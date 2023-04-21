@@ -164,36 +164,57 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
 
     //Save products
     @IBAction func submitItemButtonPressed(_ sender: Any) {
-        guard let description = descriptionTextField.text, let productName = productNameTextField.text else {
-            print("Error: Some fields are empty")
-            return
-        }
-        var data = ["productName": productNameTextField.text,
-                    "description": descriptionTextField.text,
-                    "startingPrice": startingPriceTextField.text,
-                    "minimumIncrement":minimumIncrementTextField.text,
-                    "buyItNow": buyItNowTextField.text,
-                    "timePeriod": timeTextField.text,
-                    "category": categoryTextField.text,
-                    "gender": genderTextField.text]
-        // Create a database reference
-       let databaseRef = Database.Products.products.childByAutoId()
+        
+        let alert = UIAlertController(
+            title: "Submit Listing",
+            message: "Are you sure you want to submit the listing?",
+            preferredStyle: .alert
+        )
 
-        // Create a child reference for "products" node
-        let productsRef = databaseRef
-
-        // Set the values to be saved in the database
-        // data = ["name": name, "email": email]
-
-        // Save the data to the new child node
-        productsRef.setValue(data) { (error, ref) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            } else {
-                print("Data saved successfully!")
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            guard let description = self.descriptionTextField.text, let productName = self.productNameTextField.text else {
+                print("Error: Some fields are empty")
+                return
             }
-        }
+            var data = [
+                "productName": self.productNameTextField.text,
+                "description": self.descriptionTextField.text,
+                "startingPrice": self.startingPriceTextField.text,
+                "minimumIncrement": self.minimumIncrementTextField.text,
+                "buyItNow": self.buyItNowTextField.text,
+                "timePeriod": self.timeTextField.text,
+                "category": self.categoryTextField.text,
+                "gender": self.genderTextField.text
+            ]
+            
+            // Create a database reference
+            let databaseRef = Database.Products.products.childByAutoId()
+
+            // Create a child reference for "products" node
+            let productsRef = databaseRef
+
+            // Set the values to be saved in the database
+            // data = ["name": name, "email": email]
+
+            // Save the data to the new child node
+            productsRef.setValue(data) { (error, ref) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                } else {
+                    print("Data saved successfully!")
+                    self.performSegue(withIdentifier: "unwindToHome", sender: nil)
+                }
+            }
+        })
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        self.present(alert, animated: true)
+
     }
+        
+       
+    
 
     
 

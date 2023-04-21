@@ -6,40 +6,40 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MyListingsStoryboard-->
+        <!--AddProductStoryboard-->
         <scene sceneID="Egg-vU-l6w">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyListingsStoryboard" id="9bm-uJ-Nyg" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomepageStoryboard" referencedIdentifier="AddProductStoryboard" id="9bm-uJ-Nyg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="6LA-66-OBz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsp-R0-kcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1348.854961832061" y="-242.25352112676057"/>
         </scene>
-        <!--RaneemStoryboard-->
+        <!--BidingListingsStoryboard-->
         <scene sceneID="dVM-Rg-ky5">
             <objects>
-                <viewControllerPlaceholder storyboardName="RaneemStoryboard" id="Hcr-P2-beE" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="BidingListingsStoryboard" id="Hcr-P2-beE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="JYA-7q-W4D"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bT9-6i-OkL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1348.854961832061" y="-204.22535211267606"/>
         </scene>
-        <!--IsaStoryboard-->
+        <!--RaneemStoryboard-->
         <scene sceneID="0DE-SN-Y4i">
             <objects>
-                <viewControllerPlaceholder storyboardName="IsaStoryboard" id="Z5B-0F-pGE" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="RaneemStoryboard" id="Z5B-0F-pGE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Qoc-Oh-JFa"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EkJ-m1-yh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1347.3282442748091" y="-165.49295774647888"/>
         </scene>
-        <!--HomepageStoryboard-->
+        <!--HomeTableViewControllerID-->
         <scene sceneID="7TT-Eh-vGD">
             <objects>
-                <viewControllerPlaceholder storyboardName="HomepageStoryboard" id="XcR-Ud-bBB" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="HomepageStoryboard" referencedIdentifier="HomeTableViewControllerID" id="XcR-Ud-bBB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="S8w-tt-MVz"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sHm-Ez-y20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
