@@ -29,7 +29,7 @@
         <!--Start Bid-->
         <scene sceneID="QlG-vJ-ad7">
             <objects>
-                <tableViewController id="d1y-ZN-fd1" customClass="StartBidTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="StartBidTableViewController" id="d1y-ZN-fd1" customClass="StartBidTableViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NsX-uP-kxl">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,9 +155,7 @@
                                                     <rect key="frame" x="138.33333333333331" y="8" width="153.33333333333331" height="34.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" image="hammer.circle" catalog="system" imagePlacement="trailing" title=" Start Bidding">
-                                                        <backgroundConfiguration key="background">
-                                                            <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        </backgroundConfiguration>
+                                                        <backgroundConfiguration key="background"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <segue destination="Cfz-Yc-fcs" kind="show" id="Ga0-Vu-ZcJ"/>
@@ -372,9 +370,7 @@
                                                     <rect key="frame" x="161.66666666666666" y="8" width="106.66666666666666" height="34.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Submit Bid">
-                                                        <backgroundConfiguration key="background">
-                                                            <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        </backgroundConfiguration>
+                                                        <backgroundConfiguration key="background"/>
                                                     </buttonConfiguration>
                                                     <connections>
                                                         <action selector="submitBidButtonPressed:" destination="Cfz-Yc-fcs" eventType="touchUpInside" id="5PC-cc-ckY"/>

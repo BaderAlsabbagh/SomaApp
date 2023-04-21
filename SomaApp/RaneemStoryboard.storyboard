@@ -448,6 +448,7 @@
                             <outlet property="delegate" destination="RrG-2V-9d7" id="k1d-wD-e8F"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="4q5-pz-bCW"/>
                     <navigationItem key="navigationItem" title="Profile" id="29h-0b-4j0">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gear" catalog="system" style="plain" id="Dxr-jq-bOy">
                             <connections>
@@ -455,6 +456,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Di-uR-5Ue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -915,6 +917,7 @@
         <image name="apple-pay-icon-isolated-in-black-editorial-mobile-payment-app-logo-free-vector" width="1920" height="1440"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="visa-prepaid-list" width="600" height="380"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

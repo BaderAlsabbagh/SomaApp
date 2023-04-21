@@ -94,7 +94,7 @@ class StartBidTableViewController: UITableViewController {
         // Countdown
         let calendar = Calendar.current
         // Set the end date based on the selected duration
-        endDate = Date().addingTimeInterval(getTimeInterval(forDuration: .threeDays))
+        endDate = Date().addingTimeInterval(getTimeInterval(forDuration: .oneHour))
         
         // Set up date formatter
         dateFormatter.dateFormat = "HH:mm:ss"
