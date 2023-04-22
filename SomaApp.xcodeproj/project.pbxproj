@@ -141,6 +141,18 @@
 			path = LastestProduct;
 			sourceTree = "<group>";
 		};
+		6AC64B9229F35BFE0063D727 /* DatabaseTesting */ = {
+			isa = PBXGroup;
+			children = (
+				6A74283C29E4E2AC00F17BC8 /* DatabaseSaveTestViewController.swift */,
+				6A74283829E4A9F900F17BC8 /* DatabaseLoadImage.swift */,
+				6A74283E29E4E2C500F17BC8 /* DatabaseSaveTestStoryboard.storyboard */,
+				6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */,
+				6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */,
+			);
+			path = DatabaseTesting;
+			sourceTree = "<group>";
+		};
 		6ADA84BC29D06FB800DB1DB6 = {
 			isa = PBXGroup;
 			children = (
@@ -199,11 +211,7 @@
 				6ADA84C829D06FB800DB1DB6 /* AppDelegate.swift */,
 				6ADA84CA29D06FB800DB1DB6 /* SceneDelegate.swift */,
 				6A6D6C3F29E3B3D700C45433 /* Database.swift */,
-				6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */,
-				6A74283829E4A9F900F17BC8 /* DatabaseLoadImage.swift */,
-				6A74283C29E4E2AC00F17BC8 /* DatabaseSaveTestViewController.swift */,
-				6A74283E29E4E2C500F17BC8 /* DatabaseSaveTestStoryboard.storyboard */,
-				6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */,
+				6AC64B9229F35BFE0063D727 /* DatabaseTesting */,
 				6ADA84D129D06FBA00DB1DB6 /* Assets.xcassets */,
 				6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */,
 				6ADA84D329D06FBA00DB1DB6 /* LaunchScreen.storyboard */,
