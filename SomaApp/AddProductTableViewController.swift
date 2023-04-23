@@ -50,6 +50,21 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        productNameTextField.text = ""
+        descriptionTextField.text = ""
+        startingPriceTextField.text = ""
+        minimumIncrementTextField.text = ""
+        buyItNowTextField.text = ""
+        categoryTextField.text = ""
+        genderTextField.text = ""
+        timeTextField.text = ""
+        conditionTextField.text = ""
+        brandTextField.text = ""
+        imageView.image = nil
+    }
+    
     //Image Selection Code
     @IBAction func uploadImagesButtonTapped(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()

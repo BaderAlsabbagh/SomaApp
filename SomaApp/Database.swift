@@ -2,6 +2,7 @@ import UIKit
 
 import FirebaseDatabase
 import FirebaseStorage
+import Kingfisher
 
 // exmpale for setting database entieres
 // Database.Users.users["exmaple-uuid"].setValue(["name": "value"])
@@ -57,24 +58,19 @@ class Database {
             return imageUuid
         }
         
-        static func loadImage(uuid: String) -> UIImage? {
-            
-            var image: UIImage? = nil
-            
-            ref.child("images/\(uuid).png").getData(maxSize:(104857666), completion: { (data, error) in
-                
-                guard error == nil else {
-                    print("Failed to download", error ?? "")
-                    return
+        static func loadImage(view: UIImageView, uuid: String) {
+                    
+                    ref.child("images/\(uuid)").downloadURL { url, error in
+                        
+                        guard error == nil else {
+                            print("Failed to download", error ?? "")
+                            return
+                        }
+                        
+                        guard let url = url else { return }
+                        view.kf.setImage(with: url)
+                    }
                 }
-                
-                if let image = data {
-                    let image = UIImage(data: image)
-                }
-            })
-            
-            return image
-        }
     }
     
     
