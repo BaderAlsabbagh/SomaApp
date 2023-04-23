@@ -13,25 +13,7 @@ class LatestProductTableViewController: UITableViewController {
         tableView.delegate = self
         
         self.latestProducts = []
-        
-        // Query the database for all products sorted by timestamp in descending order
-        Database.Products.products.queryOrdered(byChild: "timestamp").queryLimited(toLast: 4).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Retrieve the latest products
-            let products = snapshot.children.allObjects as! [DataSnapshot]
-            for productSnapshot in products.reversed() {
-                guard let product = productSnapshot.value as? [String: Any] else {
-                    continue
-                }
-                self.latestProducts.append(product)
-            }
-            
-            print("Latest products: \(self.latestProducts)")
-            
-            self.tableView.reloadData() // reload table view data
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+        fetchLatestProducts()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,33 +37,9 @@ class LatestProductTableViewController: UITableViewController {
             productImageView.contentMode = .scaleAspectFill
             productImageView.clipsToBounds = true
 
+            
             if let imageUrlString = latestProducts[i]["imageUuid"] as? String {
-                guard let imageUrl = URL(string: imageUrlString) else {
-                    productImageView.image = UIImage(named: "placeholder.png")
-                    return cell
-                }
-                let imageUuid = imageUrl.lastPathComponent
-                let storageRef = Storage.storage().reference().child("images/\(imageUuid)")
-                storageRef.downloadURL { url, error in
-                    if let error = error {
-                        print("Error downloading image1: \(error.localizedDescription)")
-                        return
-                    }
-                    if let url = url {
-                        URLSession.shared.dataTask(with: url) { data, response, error in
-                            if let error = error {
-                                print("Error downloading image2: \(error.localizedDescription)")
-                                return
-                            }
-                            if let data = data {
-                                let image = UIImage(data: data)
-                                DispatchQueue.main.async {
-                                    productImageView.image = image
-                                }
-                            }
-                        }.resume()
-                    }
-                }
+                downloadImage(imageUrlString: imageUrlString, imageView: productImageView)
             } else {
                 productImageView.image = UIImage(named: "placeholder.png")
             }
@@ -93,7 +51,30 @@ class LatestProductTableViewController: UITableViewController {
             // Set the time period label text
             let timePeriod = latestProducts[i]["timePeriod"] as? String ?? ""
             timePeriodLabel.text = timePeriod
+            // Create the product name label
+            let productNameLabel = UILabel(frame: CGRect(x: x + 4, y: y + productImageView.frame.height + timePeriodLabel.frame.height + 16, width: cellWidth / 2 - 8, height: 24))
+            productNameLabel.font = UIFont.boldSystemFont(ofSize: 16)
 
+            // Set the product name label text
+            let productName = latestProducts[i]["productName"] as? String ?? ""
+            productNameLabel.text = productName
+            let brandLabel = UILabel(frame: CGRect(x: x + 4, y: y + productImageView.frame.height + timePeriodLabel.frame.height + productNameLabel.frame.height + 24, width: cellWidth / 2 - 8, height: 24))
+            brandLabel.font = UIFont.systemFont(ofSize: 16)
+
+            // Set the brand label text
+            let brand = latestProducts[i]["brand"] as? String ?? ""
+            brandLabel.text = brand
+            // Create the current bid label
+            let currentBidLabel = UILabel(frame: CGRect(x: x + 4, y: y + productImageView.frame.height + timePeriodLabel.frame.height + productNameLabel.frame.height + brandLabel.frame.height + 32, width: cellWidth / 2 - 8, height: 24))
+            currentBidLabel.font = UIFont.systemFont(ofSize: 16)
+
+            // Set the current bid label text
+            let currentBid = latestProducts[i]["currentBid"] as? String ?? ""
+            currentBidLabel.text = currentBid
+
+            cell.contentView.addSubview(currentBidLabel)
+            cell.contentView.addSubview(brandLabel)
+            cell.contentView.addSubview(productNameLabel)
             cell.contentView.addSubview(productImageView)
             cell.contentView.addSubview(timePeriodLabel)
         }
@@ -106,5 +87,55 @@ class LatestProductTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.bounds.height * 0.9 // set the height of the row to 30% of the table view height
+    }
+    func fetchLatestProducts() {
+        self.latestProducts = []
+        
+        // Query the database for all products sorted by timestamp in descending order
+        Database.Products.products.queryOrdered(byChild: "timestamp").queryLimited(toLast: 4).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Retrieve the latest products
+            let products = snapshot.children.allObjects as! [DataSnapshot]
+            for productSnapshot in products.reversed() {
+                guard let product = productSnapshot.value as? [String: Any] else {
+                    continue
+                }
+                self.latestProducts.append(product)
+            }
+            
+            print("Latest products: \(self.latestProducts)")
+            
+            self.tableView.reloadData() // reload table view data
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    func downloadImage(imageUrlString: String, imageView: UIImageView) {
+        guard let imageUrl = URL(string: imageUrlString) else {
+            imageView.image = UIImage(named: "placeholder.png")
+            return
+        }
+        let imageUuid = imageUrl.lastPathComponent
+        let storageRef = Storage.storage().reference().child("images/\(imageUuid)")
+        storageRef.downloadURL { url, error in
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+                return
+            }
+            if let url = url {
+                URLSession.shared.dataTask(with: url) { data, response, error in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                        return
+                    }
+                    if let data = data {
+                        let image = UIImage(data: data)
+                        DispatchQueue.main.async {
+                            imageView.image = image
+                        }
+                    }
+                }.resume()
+            }
+        }
     }
 }
