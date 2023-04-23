@@ -10,11 +10,10 @@ import FirebaseStorage
 
 class AddProductTableViewController: UITableViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate, UINavigationControllerDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        1
     }
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    
     
     // Product Listing Outlets (TEXT FIELDS)
     
@@ -23,22 +22,15 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     @IBOutlet weak var startingPriceTextField: UITextField!
     @IBOutlet weak var minimumIncrementTextField: UITextField!
     @IBOutlet weak var buyItNowTextField: UITextField!
-    
     @IBOutlet weak var categoryTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
-    
     @IBOutlet weak var conditionTextField: UITextField!
-    
     @IBOutlet weak var brandTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var checkMark: UIButton!
     @IBOutlet weak var submitItem: UIButton!
-    
-    var imageView: UIImageView?
-    // Array of image views to display in the scroll view
-    var imageViews = [UIImageView]()
-    var imageUuid: String?
     
     let categories = ["Clothing", "Bags", "Footwear", "Eyewear", "Accessories", "Jewelry", "Other"]
     let genders = ["Male", "Female", "Both"]
@@ -52,13 +44,6 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the delegate of the scroll view to self
-        scrollView.delegate = self
-        // Set the content size of the scroll view based on the number of image views
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(imageViews.count), height: scrollView.frame.height)
-        // Set the number of pages on the page control
-        pageControl.numberOfPages = imageViews.count
-        
         assignPickerViews()
         
         submitItem.isEnabled = false
@@ -67,27 +52,29 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     
     //Image Selection Code
     @IBAction func uploadImagesButtonTapped(_ sender: UIButton) {
-        let alert = UIAlertController(
-            title: "",
-            message: "Are you sure you want upload images?",
-            preferredStyle: .alert
-        )
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-            
-            let viewController = UIImagePickerController()
-            viewController.sourceType = .photoLibrary
-            viewController.delegate = self
-            viewController.allowsEditing = true
-            self.present(viewController, animated: true)
-        })
+        let actionSheet = UIAlertController(title: "Photo Source", message: "Choose a source", preferredStyle: .actionSheet)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action:UIAlertAction) in
+            imagePickerController.sourceType = .photoLibrary
+            self.present(imagePickerController, animated: true, completion: nil)
+        }))
         
-        self.present(alert, animated: true)
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
-  
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            imageView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func checkMarkButtonPressed(_ sender: Any) {
         
         guard
@@ -114,203 +101,173 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
         }
     }
     
-    //Save products
     @IBAction func submitItemButtonPressed(_ sender: Any) {
         let alert = UIAlertController(
             title: "Submit Listing",
             message: "Are you sure you want to submit the listing?",
             preferredStyle: .alert
         )
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.uploadImageToStorage { [weak self] metadata in
+                guard let self = self else { return }
+                
+                self.saveDataToDatabase(imageUuid: metadata.name ?? "")
+                self.performSegue(withIdentifier: "unwindToHome", sender: self)
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(submitAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
 
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-            guard let description = self.descriptionTextField.text, let productName = self.productNameTextField.text else {
-                print("Error: Some fields are empty")
+    private func uploadImageToStorage(completion: @escaping (StorageMetadata) -> Void) {
+        let storageRef = Storage.storage().reference().child("images/\(UUID().uuidString).jpg")
+        
+        guard let imageData = imageView.image?.jpegData(compressionQuality: 0.75) else {
+            print("Error: Failed to get image data")
+            return
+        }
+        
+        let uploadTask = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
                 return
             }
-            var data = [
-                "productName": self.productNameTextField.text,
-                "description": self.descriptionTextField.text,
-                "startingPrice": self.startingPriceTextField.text,
-                "minimumIncrement": self.minimumIncrementTextField.text,
-                "buyItNow": self.buyItNowTextField.text,
-                "timePeriod": self.timeTextField.text,
-                "category": self.categoryTextField.text,
-                "gender": self.genderTextField.text,
-                "brand": self.brandTextField.text,
-                "condition": self.conditionTextField.text,
-                "imageUuid": self.imageUuid
-            ]
             
-            // Create a database reference
-            let databaseRef = Database.Products.products.childByAutoId()
-
-            // Create a child reference for "products" node
-            let productsRef = databaseRef
-
-            productsRef.setValue(data) { (error, ref) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                } else {
-                    print("Data saved successfully!")
-                    self.performSegue(withIdentifier: "unwindToHome", sender: nil)
-                }
+            guard let metadata = metadata else {
+                print("Error: Failed to get metadata")
+                return
             }
-        })
-
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
-        self.present(alert, animated: true)
-
+            
+            completion(metadata)
+        }
     }
-    
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-        
-        guard let image = info[.editedImage] as? UIImage else {
-            print("Image Not Found")
+
+    private func saveDataToDatabase(imageUuid: String) {
+        guard let productName = productNameTextField.text, !productName.isEmpty,
+              let description = descriptionTextField.text, !description.isEmpty,
+              let startingPrice = startingPriceTextField.text, !startingPrice.isEmpty,
+              let minimumIncrement = minimumIncrementTextField.text, !minimumIncrement.isEmpty,
+              let timePeriod = timeTextField.text, !timePeriod.isEmpty,
+              let category = categoryTextField.text,
+              let gender = genderTextField.text, !gender.isEmpty,
+              let condition = conditionTextField.text, !condition.isEmpty
+        else {
+            print("Error: Required fields are empty")
             return
         }
         
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        let xCoordinate = scrollView.frame.width * CGFloat(imageViews.count)
-        imageView.frame = CGRect(x: xCoordinate, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-        imageViews.append(imageView)
+        let data = [
+            "productName": productName,
+            "description": description,
+            "startingPrice": startingPrice,
+            "minimumIncrement": minimumIncrement,
+            "buyItNow": buyItNowTextField.text ?? "",
+            "timePeriod": timePeriod,
+            "category": category,
+            "gender": gender,
+            "brand": brandTextField.text ?? "",
+            "condition": condition,
+            "imageUuid": imageUuid
+        ]
         
-        // Remove all existing subviews from the scroll view
-        scrollView.subviews.forEach { $0.removeFromSuperview() }
-        
-        // Add image views from the array to the scroll view
-        for (index, imageView) in imageViews.enumerated() {
-            let xCoordinate = scrollView.frame.width * CGFloat(index)
-            imageView.frame = CGRect(x: xCoordinate, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
-            scrollView.addSubview(imageView)
-        }
-        
-        // Set the content size based on the number of image views
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(imageViews.count), height: scrollView.frame.height)
-        
-        // Update the number of pages on the page control
-        pageControl.numberOfPages = imageViews.count
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-            print("Failed to get JPEG data from image")
-            return
-        }
-        
-        let storageRef = Storage.storage().reference().child("images/\(UUID().uuidString).jpg")
-        guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-            print("Failed to convert UIImage to Data")
-            return
-        }
-        let metadata = StorageMetadata()
-        metadata.contentType = "image/jpeg"
-        storageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+        let databaseRef = Database.Products.products.childByAutoId()
+        databaseRef.setValue(data) { (error, ref) in
             if let error = error {
-                print("Error uploading image: \(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)")
             } else {
-                print("Image uploaded successfully")
-                // You can access the download URL of the uploaded image like this:
-                storageRef.downloadURL(completion: { (url, error) in
-                    if let error = error {
-                        print("Error retrieving download URL: \(error.localizedDescription)")
-                    } else {
-                        guard let downloadURL = url else {
-                            print("Download URL not found")
-                            return
-                        }
-                        self.imageUuid = downloadURL.absoluteString // Update imageUuid with the download URL
-                        
-                        print("Image uploaded successfully! Download URL: \(downloadURL)")
-                        print("Download URL: \(downloadURL.absoluteString)")
-                    }
-                })
+                print("Data saved successfully!")
             }
         }
     }
-    
-    
-    
-    
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
-    }
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch pickerView.tag {
-        case 1:
-            return categories.count
-        case 2:
-            return genders.count
-        case 3:
-            return times.count
-        case 4:
-            return conditions.count
-        default:
-            return 1
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch pickerView.tag {
-        case 1:
-            return categories[row]
-        case 2:
-            return genders[row]
-        case 3:
-            return times[row]
-        case 4:
-            return conditions[row]
-        default:
-            return "Picker data not found."
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        switch pickerView.tag {
-        case 1:
-            categoryTextField.text = categories[row]
-            categoryTextField.resignFirstResponder()
-        case 2:
-            genderTextField.text = genders[row]
-            genderTextField.resignFirstResponder()
-        case 3:
-            timeTextField.text = times[row]
-            timeTextField.resignFirstResponder()
-        case 4:
-            conditionTextField.text = conditions[row]
-            conditionTextField.resignFirstResponder()
-        default:
-            return
-        }
-    }
-    
-    func assignPickerViews(){
-        categoryTextField.inputView = categoryPickerView
-        genderTextField.inputView = genderPickerView
-        timeTextField.inputView = timePickerView
-        conditionTextField.inputView = conditionPickerView
+
         
-        //        categoryTextField.placeholder = "Select Category"
-        //        genderTextField.placeholder = "Select Gender"
-        //        timeTextField.placeholder = "Select Time Period"
         
-        categoryTextField.textAlignment = .left
-        genderTextField.textAlignment = .left
-        timeTextField.textAlignment = .left
-        categoryPickerView.delegate = self
-        categoryPickerView.dataSource = self
-        genderPickerView.delegate = self
-        genderPickerView.dataSource = self
-        timePickerView.delegate = self
-        timePickerView.dataSource = self
-        conditionPickerView.delegate = self
-        conditionPickerView.dataSource = self
-        categoryPickerView.tag = 1
-        genderPickerView.tag = 2
-        timePickerView.tag = 3
-        conditionPickerView.tag = 4
-    }
+        
+        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+            switch pickerView.tag {
+            case 1:
+                return categories.count
+            case 2:
+                return genders.count
+            case 3:
+                return times.count
+            case 4:
+                return conditions.count
+            default:
+                return 1
+            }
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+            switch pickerView.tag {
+            case 1:
+                return categories[row]
+            case 2:
+                return genders[row]
+            case 3:
+                return times[row]
+            case 4:
+                return conditions[row]
+            default:
+                return "Picker data not found."
+            }
+        }
+        
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            switch pickerView.tag {
+            case 1:
+                categoryTextField.text = categories[row]
+                categoryTextField.resignFirstResponder()
+            case 2:
+                genderTextField.text = genders[row]
+                genderTextField.resignFirstResponder()
+            case 3:
+                timeTextField.text = times[row]
+                timeTextField.resignFirstResponder()
+            case 4:
+                conditionTextField.text = conditions[row]
+                conditionTextField.resignFirstResponder()
+            default:
+                return
+            }
+        }
+        
+        func assignPickerViews(){
+            categoryTextField.inputView = categoryPickerView
+            genderTextField.inputView = genderPickerView
+            timeTextField.inputView = timePickerView
+            conditionTextField.inputView = conditionPickerView
+            
+            //        categoryTextField.placeholder = "Select Category"
+            //        genderTextField.placeholder = "Select Gender"
+            //        timeTextField.placeholder = "Select Time Period"
+            
+            categoryTextField.textAlignment = .left
+            genderTextField.textAlignment = .left
+            timeTextField.textAlignment = .left
+            categoryPickerView.delegate = self
+            categoryPickerView.dataSource = self
+            genderPickerView.delegate = self
+            genderPickerView.dataSource = self
+            timePickerView.delegate = self
+            timePickerView.dataSource = self
+            conditionPickerView.delegate = self
+            conditionPickerView.dataSource = self
+            categoryPickerView.tag = 1
+            genderPickerView.tag = 2
+            timePickerView.tag = 3
+            conditionPickerView.tag = 4
+        }
 }
+
         
  
