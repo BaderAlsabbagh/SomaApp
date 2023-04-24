@@ -32,7 +32,7 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     @IBOutlet weak var checkMark: UIButton!
     @IBOutlet weak var submitItem: UIButton!
     
-    let categories = ["Clothing", "Bags", "Footwear", "Eyewear", "Accessories", "Jewelry", "Other"]
+    let categories = ["Clothing", "Bags", "Footwear", "Eyewear", "Accessories", "Jewelry", "Watches", "Other"]
     let genders = ["Male", "Female", "Both"]
     let times = ["1 Hour", "3 Hours", "6 Hours", "12 Hours", "1 Day", "3 Days", "7 Days"]
     let conditions = ["New", "Open Box", "Barely Used", "Used"]
@@ -52,6 +52,15 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        
+   
+        let currentOffset = tableView.contentOffset
+        
+        if currentOffset.y > 0 {
+               tableView.setContentOffset(CGPoint.zero, animated: false)
+           }
+
         productNameTextField.text = ""
         descriptionTextField.text = ""
         startingPriceTextField.text = ""
@@ -63,6 +72,8 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
         conditionTextField.text = ""
         brandTextField.text = ""
         imageView.image = nil
+        checkMark.isSelected = false
+        submitItem.isEnabled = false
     }
     
     //Image Selection Code
