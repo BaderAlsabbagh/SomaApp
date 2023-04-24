@@ -78,6 +78,15 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
         scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(imageViews.count), height: scrollView.frame.height)
         pageControl.numberOfPages = imageViews.count
         
+        latestImageView1.layer.cornerRadius = 15.0
+        latestImageView1.clipsToBounds = true
+        latestImageView2.layer.cornerRadius = 15.0
+        latestImageView2.clipsToBounds = true
+        latestImageView3.layer.cornerRadius = 15.0
+        latestImageView3.clipsToBounds = true
+        latestImageView4.layer.cornerRadius = 15.0
+        latestImageView4.clipsToBounds = true
+
         fetchLatestProducts()
         updateLatestImages()
         

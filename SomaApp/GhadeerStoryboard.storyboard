@@ -505,7 +505,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="om0-Me-9kW">
-                                <rect key="frame" x="32" y="119.00000000000001" width="147" height="206.33333333333337"/>
+                                <rect key="frame" x="32" y="111.00000000000001" width="147" height="206.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4921" translatesAutoresizingMaskIntoConstraints="NO" id="7KY-9X-35h">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="151"/>
@@ -536,7 +536,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ASb-dS-GOj">
-                                <rect key="frame" x="213" y="119.00000000000001" width="147" height="206.33333333333337"/>
+                                <rect key="frame" x="213" y="111.00000000000001" width="147" height="206.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4906" translatesAutoresizingMaskIntoConstraints="NO" id="2CC-jQ-B6d">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="151"/>
@@ -567,7 +567,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BsI-al-5En">
-                                <rect key="frame" x="32" y="342" width="147" height="206.33333333333337"/>
+                                <rect key="frame" x="32" y="332" width="147" height="206.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4916" translatesAutoresizingMaskIntoConstraints="NO" id="ggk-Yt-bf5">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="151"/>
@@ -598,7 +598,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-86-sTi">
-                                <rect key="frame" x="213" y="342" width="147" height="206.33333333333337"/>
+                                <rect key="frame" x="213" y="332" width="147" height="206.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoe2" translatesAutoresizingMaskIntoConstraints="NO" id="jKK-8a-PXh">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="151"/>
@@ -629,7 +629,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xDG-4W-Jvu">
-                                <rect key="frame" x="32" y="567.66666666666663" width="147" height="206.33333333333337"/>
+                                <rect key="frame" x="32" y="552.66666666666663" width="147" height="206.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoe1" translatesAutoresizingMaskIntoConstraints="NO" id="pzP-Q3-lOx">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="151"/>
@@ -660,7 +660,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="YjE-8U-l2g">
-                                <rect key="frame" x="213" y="567.66666666666663" width="147" height="206.33333333333337"/>
+                                <rect key="frame" x="213" y="552.66666666666663" width="147" height="206.33333333333337"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4921" translatesAutoresizingMaskIntoConstraints="NO" id="L24-Jq-DPW">
                                         <rect key="frame" x="0.0" y="0.0" width="147" height="151"/>
@@ -695,16 +695,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="t8L-Lm-OTB" firstAttribute="trailing" secondItem="ASb-dS-GOj" secondAttribute="trailing" constant="33" id="0nu-Jb-tlF"/>
-                            <constraint firstItem="xDG-4W-Jvu" firstAttribute="bottom" secondItem="t8L-Lm-OTB" secondAttribute="bottom" constant="5" id="3G7-qe-igc"/>
-                            <constraint firstItem="ASb-dS-GOj" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="16" id="AJ1-NJ-Tk1"/>
-                            <constraint firstItem="YjE-8U-l2g" firstAttribute="bottom" secondItem="t8L-Lm-OTB" secondAttribute="bottom" constant="5" id="AeI-Ws-ekp"/>
-                            <constraint firstItem="om0-Me-9kW" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="16" id="BD1-qS-Ixu"/>
+                            <constraint firstItem="xDG-4W-Jvu" firstAttribute="bottom" secondItem="t8L-Lm-OTB" secondAttribute="bottom" constant="-10" id="3G7-qe-igc"/>
+                            <constraint firstItem="ASb-dS-GOj" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="8" id="AJ1-NJ-Tk1"/>
+                            <constraint firstItem="YjE-8U-l2g" firstAttribute="bottom" secondItem="t8L-Lm-OTB" secondAttribute="bottom" constant="-10" id="AeI-Ws-ekp"/>
+                            <constraint firstItem="om0-Me-9kW" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="8" id="BD1-qS-Ixu"/>
                             <constraint firstItem="xDG-4W-Jvu" firstAttribute="leading" secondItem="t8L-Lm-OTB" secondAttribute="leading" constant="32" id="Bhl-IH-TFo"/>
                             <constraint firstItem="om0-Me-9kW" firstAttribute="leading" secondItem="t8L-Lm-OTB" secondAttribute="leading" constant="32" id="FUY-Mc-4tn"/>
                             <constraint firstItem="t8L-Lm-OTB" firstAttribute="trailing" secondItem="lHv-86-sTi" secondAttribute="trailing" constant="33" id="Kgb-mZ-AuA"/>
                             <constraint firstItem="BsI-al-5En" firstAttribute="leading" secondItem="t8L-Lm-OTB" secondAttribute="leading" constant="32" id="LYg-Lf-eXU"/>
-                            <constraint firstItem="BsI-al-5En" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="239" id="bn9-PX-qN2"/>
-                            <constraint firstItem="lHv-86-sTi" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="239" id="h9P-AO-9Wl"/>
+                            <constraint firstItem="BsI-al-5En" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="229" id="bn9-PX-qN2"/>
+                            <constraint firstItem="lHv-86-sTi" firstAttribute="top" secondItem="t8L-Lm-OTB" secondAttribute="top" constant="229" id="h9P-AO-9Wl"/>
                             <constraint firstItem="t8L-Lm-OTB" firstAttribute="trailing" secondItem="YjE-8U-l2g" secondAttribute="trailing" constant="33" id="l3M-SA-VsD"/>
                         </constraints>
                     </view>
