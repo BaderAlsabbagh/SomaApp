@@ -1,17 +1,10 @@
-//
-//  MyListingsTableViewController.swift
-//  SomaApp
-//
-//  Created by iOSdev on 13/04/2023.
-//
-
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class MyListingsTableViewController: UITableViewController {
-
-    @IBOutlet weak var imageView: UIImageView!
     
- 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var startingPriceLabel: UILabel!
@@ -21,172 +14,74 @@ class MyListingsTableViewController: UITableViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var buyItNowLabel: UILabel!
     
+    var productId: String?
+    var product: [String: Any]?
+    let storageRef = Storage.storage().reference().child("images")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-        // Do any additional setup after loading the view.
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/productName"].getData { error, snapshotProductName in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotProductName = snapshotProductName?.value as? String {
-                
-                self.productNameLabel.text = snapshotProductName
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/description"].getData { error, snapshotDescription in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotDescription = snapshotDescription?.value as? String {
-                
-                self.descriptionLabel.text = snapshotDescription
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/startingPrice"].getData { error, snapshotStartingPrice in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotStartingPrice = snapshotStartingPrice?.value as? String {
-                
-                self.startingPriceLabel.text = snapshotStartingPrice
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/minimumIncrement"].getData { error, snapshotMinimumIncrement in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotMinimumIncrement = snapshotMinimumIncrement?.value as? String {
-                
-                self.minimumIncrement.text = snapshotMinimumIncrement
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/category"].getData { error, snapshotCategory in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotCategory = snapshotCategory?.value as? String {
-                
-                self.categoryLabel.text = snapshotCategory
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/gender"].getData { error, snapshotGender in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotGender = snapshotGender?.value as? String {
-                
-                self.genderLabel.text = snapshotGender
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/buyItNow"].getData { error, snapshotBuyItNow in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotBuyItNow = snapshotBuyItNow?.value as? String {
-                
-                self.buyItNowLabel.text = snapshotBuyItNow
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/timePeriod"].getData { error, snapshotTimePeriod in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotTimePeriod = snapshotTimePeriod?.value as? String {
-                
-                self.timePeriodLabel.text = snapshotTimePeriod
-            }
-        }
+        // Retrieve the latest product
+        retrieveLatestProduct()
         
+        // Retrieve the latest image
+        retrieveLatestImage()
+    }
     
-        
-        
-        //Image Code
-        let imageUuid = "tissotWatch.png"
-                ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
-                    if let error = error {
-                        print("Error downloading image: \(error.localizedDescription)")
-                    } else if let image = image {
-                        self?.imageView.image = image
+    func retrieveLatestProduct() {
+        // Query the database for all products sorted by timestamp in descending order
+        Database.Products.products.queryOrdered(byChild: "timestamp").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Retrieve the most recent product
+            let products = snapshot.children.allObjects as! [DataSnapshot]
+            let mostRecentProduct = products.last
+            guard let productId = mostRecentProduct?.key, let product = mostRecentProduct?.value as? [String: Any] else {
+                return
+            }
+            self.productId = productId
+            self.product = product
+            self.updateView()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    func retrieveLatestImage() {
+        // Query the storage for all images sorted by timestamp in descending order
+        storageRef.list(maxResults: 1, completion: { (result, error) in
+            if let result = result {
+                let images = result.items
+                // Retrieve the latest image
+                if let imageRef = images.first {
+                    imageRef.getData(maxSize: 10 * 1024 * 1024) { (data, error) in
+                        if let error = error {
+                            print("Error downloading image: \(error.localizedDescription)")
+                            return
+                        }
+                        if let data = data, let image = UIImage(data: data) {
+                            // Use the downloaded image
+                            self.imageView.image = image
+                        }
                     }
                 }
+            } else if let error = error {
+                print("Error querying storage: \(error.localizedDescription)")
             }
+        })
+    }
+    
+    func updateView() {
+        // Update the view with the retrieved product details
+        guard let product = self.product else {
+            return
         }
-     
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.productNameLabel.text = product["productName"] as? String
+        self.descriptionLabel.text = product["description"] as? String
+        self.startingPriceLabel.text = product["startingPrice"] as? String
+        self.minimumIncrement.text = product["minimumIncrement"] as? String
+        self.categoryLabel.text = product["category"] as? String
+        self.genderLabel.text = product["gender"] as? String
+        self.buyItNowLabel.text = product["buyItNow"] as? String
+        self.timePeriodLabel.text = product["timePeriod"] as? String
+    }
     
-    
-
-    // MARK: - Table view data source
-
-    
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+}
