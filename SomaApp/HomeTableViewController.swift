@@ -287,7 +287,7 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
                 }
                 brandLabel?.text = latestProducts[i]["brand"] as? String ?? ""
                 timePeriodLabel?.text = latestProducts[i]["timePeriod"] as? String ?? ""
-                startingPriceLabel?.text = latestProducts[i]["startingPrice"] as? String ?? ""
+                startingPriceLabel?.text = "BHD \(latestProducts[i]["startingPrice"]!)" as? String ?? ""
                 nameLabel?.text = latestProducts[i]["productName"] as? String ?? ""
                 
             } else {
