@@ -6,12 +6,47 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+
 
 class ProfileTableViewController: UITableViewController {
-
+    
+    @IBOutlet var Name: UILabel!
+    
+    @IBOutlet var Gender: UILabel!
+    
+    @IBOutlet var Address: UILabel!
+    
+    @IBOutlet var mobileNumber: UILabel!
+    
+    @IBOutlet var DOB: UILabel!
+    
+    @IBOutlet var Email: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+//        let ref = FirebaseDatabase.Database.database(url: "https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
+//        
+//        ref.child("your_child").observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get the value of the snapshot
+//            let value = snapshot.value as? String ?? ""
+//            
+//            // Set the text of the label to the value
+//            self.Name.text = value
+//            self.Gender.text = value
+//            self.Address.text = value
+//            self.mobileNumber.text = value
+//            self.DOB.text = value
+//            self.Email.text = value
+//            
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
