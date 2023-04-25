@@ -1567,7 +1567,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Xst-Ym-T9H">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m2O-Ao-bnW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="shoes2ID" automaticallyAdjustsScrollViewInsets="NO" id="m2O-Ao-bnW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eU8-IP-k7z">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
@@ -1585,7 +1585,7 @@
         <!--Navigation Controller-->
         <scene sceneID="BoI-2Q-zzX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YjX-f2-X4a" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="watch1ID" automaticallyAdjustsScrollViewInsets="NO" id="YjX-f2-X4a" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gKI-mQ-qVI">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
