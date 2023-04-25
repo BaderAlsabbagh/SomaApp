@@ -30,14 +30,9 @@ class StartBidTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        let imageUuid = "tissotWatch.png"
-        ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
-            if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
-            } else if let image = image {
-                self?.productImageView.image = image
-            }
-        }
+        
+                productImageView.image = UIImage(named: "tissotWatch")
+            
         Database.Products["-NSs7VtqFlA-Ef7pKJ7u/productName"].getData { error, snapshotProductName in
             guard error == nil else {
                 print(error!.localizedDescription)

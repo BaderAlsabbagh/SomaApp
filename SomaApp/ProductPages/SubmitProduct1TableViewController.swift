@@ -31,56 +31,6 @@ class SubmitProduct1TableViewController: UITableViewController {
         super.viewDidLoad()
         submitBid.isEnabled = false
         
-        let imageUuid = "tissotWatch.png"
-        ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
-            if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
-            } else if let image = image {
-                self?.productImageView.image = image
-            }
-        }
-    
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/productName"].getData { error, snapshotProductName in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotProductName = snapshotProductName?.value as? String {
-                
-                self.productNameLabel.text = snapshotProductName
-            }
-        }
-        
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/currentBid"].getData { error, snapshotCurrentBid in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotCurrentBid = snapshotCurrentBid?.value as? String {
-                
-                self.currentBidLabel.text = snapshotCurrentBid + " BHD"
-                self.latestBidLabel.text = snapshotCurrentBid + " BHD"
-            }
-        }
-        // Create a database reference
-        let productRef = Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u")
-        
-        // Observe changes in the product node
-        productRef.observe(.value) { (snapshot) in
-            
-            // Get the product data from the snapshot
-            let productData = snapshot.value as? [String: Any] ?? [:]
-        
-            let productName = productData["productName"] as? String ?? "N/A"
-            self.productNameLabel.text = "\(productName)"
-            // Get the latest bid and update the label
-            let latestBid = productData["latestBid"] as? String ?? "N/A"
-            self.latestBidLabel.text = "\(latestBid) BHD"
-            
-            // Get the current bid and update the label
-            let currentBid = productData["currentBid"] as? String ?? "N/A"
-            self.currentBidLabel.text = "\(currentBid) BHD"
-        }
         // Countdown
         let calendar = Calendar.current
         // Set the end date based on the selected duration
@@ -107,13 +57,11 @@ class SubmitProduct1TableViewController: UITableViewController {
         }
         let currentDate = Date()
         let components = calendar.dateComponents([.hour, .minute, .second], from: currentDate, to: endDate)
-        if let hours = components.hour, let minutes = components.minute, let seconds = components.second {
-            timeLeftLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        }
-        if currentDate >= endDate {
-            countdownTimer?.invalidate()
-            timeLeftLabel.text = "00:00:00"
-        }
+        
+//        if currentDate >= endDate {
+//            countdownTimer?.invalidate()
+//            timeLeftLabel.text = "00:00:00"
+//        }
     }
     
     // Get the time interval for the selected duration
@@ -161,8 +109,6 @@ class SubmitProduct1TableViewController: UITableViewController {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-            UpdateBid.updatedBid.bid = self.currentBidLabel.text!
-            self.saveBidToFirebase()
             self.performSegue(withIdentifier: "toStartBid", sender: nil)
         })
         
@@ -185,25 +131,7 @@ class SubmitProduct1TableViewController: UITableViewController {
     }
     
     // Save Set Bid
-    func saveBidToFirebase() {
-        let bidData = [
-            "currentBid": setBidTextField.text,
-            "latestBid": setBidTextField.text
-        ]
-        // Create a database reference
-
-        // Save the data to the new child node
-        let productRef = Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u")
-            
-            // Update the values of the existing product node with the new bid data
-            productRef.updateChildValues(bidData) { (error, ref) in
-                if let error = error {
-                    print("Error: \(error.localizedDescription)")
-                } else {
-                    print("Data updated successfully!")
-                }
-            }
-        }
+    
      
 }
 
