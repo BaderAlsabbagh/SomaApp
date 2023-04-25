@@ -1,5 +1,5 @@
 //
-//  StartBidTableViewController.swift
+//  SubmitBidTableViewController.swift
 //  SomaApp
 //
 //  Created by iOSdev on 10/04/2023.
@@ -7,83 +7,29 @@
 
 import UIKit
 
-class StartBidTableViewController: UITableViewController {
-    
+class SubmitProduct1TableViewController: UITableViewController {
+
     @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var setBidTextField: UITextField!
+    
     @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productDescriptionLabel: UILabel!
+    @IBOutlet weak var submitBid: UIButton!
     @IBOutlet weak var currentBidLabel: UILabel!
+    @IBOutlet weak var latestBidLabel: UILabel!
     @IBOutlet weak var timeLeftLabel: UILabel!
     
     let calendar = Calendar.current
     let dateFormatter = DateFormatter()
     var endDate: Date?
     var countdownTimer: Timer?
+    //    if let setBidTextfield.text as? Int {
+    //        let setBidValue = setBidTextField.text
+    //    }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        currentBidLabel.text = UpdateBid.updatedBid.bid
-    //    }
-    //    override func viewDidDisappear(_ animated: Bool) {
-    //        currentBidLabel.text = UpdateBid.updatedBid.bid
-    //    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-                productImageView.image = UIImage(named: "tissotWatch")
-            
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/productName"].getData { error, snapshotProductName in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotProductName = snapshotProductName?.value as? String {
-                
-                self.productNameLabel.text = snapshotProductName
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/description"].getData { error, snapshotDescription in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotDescription = snapshotDescription?.value as? String {
-                
-                self.productDescriptionLabel.text = snapshotDescription
-            }
-        }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/currentBid"].getData { error, snapshotCurrentBid in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotCurrentBid = snapshotCurrentBid?.value as? String {
-                
-                self.currentBidLabel.text = snapshotCurrentBid + " BHD"
-            }
-        }
-        
-        // Bid updater
-        // Create a database reference
-        let productRef = Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u")
-        
-        // Observe changes in the product node
-        productRef.observe(.value) { (snapshot) in
-            
-            // Get the product data from the snapshot
-            let productData = snapshot.value as? [String: Any] ?? [:]
-        
-            let productName = productData["productName"] as? String ?? "N/A"
-            self.productNameLabel.text = "\(productName)"
-         
-            let productDescription = productData["description"] as? String ?? "N/A"
-            self.productDescriptionLabel.text = productDescription
-            
-            // Get the current bid and update the label
-            let currentBid = productData["currentBid"] as? String ?? "N/A"
-            self.currentBidLabel.text = "\(currentBid) BHD"
-        }
+        submitBid.isEnabled = false
         
         // Countdown
         let calendar = Calendar.current
@@ -111,13 +57,11 @@ class StartBidTableViewController: UITableViewController {
         }
         let currentDate = Date()
         let components = calendar.dateComponents([.hour, .minute, .second], from: currentDate, to: endDate)
-        if let hours = components.hour, let minutes = components.minute, let seconds = components.second {
-            timeLeftLabel.text = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        }
-        if currentDate >= endDate {
-            countdownTimer?.invalidate()
-            timeLeftLabel.text = "00:00:00"
-        }
+        
+//        if currentDate >= endDate {
+//            countdownTimer?.invalidate()
+//            timeLeftLabel.text = "00:00:00"
+//        }
     }
     
     // Get the time interval for the selected duration
@@ -151,14 +95,45 @@ class StartBidTableViewController: UITableViewController {
         case sevenDays
     }
     
+        // Do any additional setup after loading the view.
     
     
-    @IBAction func unwindToBidView(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+//    override func viewDidDisappear(_ animated: Bool) {
+//        UpdateBid.updatedBid.bid = "5"
+//    }
+    @IBAction func submitBidButtonPressed(_ sender: Any) {
+        
+        let alert = UIAlertController(
+            title: "Submit Bid",
+            message: "Are you sure you want to submit the bid?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            self.performSegue(withIdentifier: "toStartBid", sender: nil)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        self.present(alert, animated: true)
+        return
     }
+    
+    
+    var validated = false {
+        didSet {
+            setBidTextField.text = validated ? "\(setBidTextField.text!)" : "false"
+            submitBid.isEnabled = validated
+        }
+    }
+    
+    @IBAction func setBidTextFieldEditingChanged(_ sender: UITextField) {
+        submitBid.isEnabled = !sender.text!.isEmpty
+    }
+    
+    // Save Set Bid
+    
+     
 }
-   
 
 
 
@@ -231,7 +206,7 @@ class StartBidTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -259,5 +234,4 @@ class StartBidTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 

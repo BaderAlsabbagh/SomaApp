@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="1152.8" y="-208.37438423645321"/>
         </scene>
-        <!--Main-->
+        <!--TabBarID-->
         <scene sceneID="CAf-SW-Qgr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="sFZ-2F-mwL" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="TabBarID" id="sFZ-2F-mwL" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cqL-HX-KAO"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuN-cG-aIP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -294,7 +294,7 @@
         <!--Navigation Controller-->
         <scene sceneID="XEL-c2-mSW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4jU-rq-PN7" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginVC" automaticallyAdjustsScrollViewInsets="NO" id="4jU-rq-PN7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ujc-15-vz4">
                         <rect key="frame" x="0.0" y="47" width="375" height="44"/>

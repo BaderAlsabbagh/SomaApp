@@ -10,6 +10,8 @@ import FirebaseAuth
 import UserNotifications
 class IsaViewController: UIViewController {
     
+    var loginCompletionHandler: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround() 
@@ -103,7 +105,7 @@ class IsaViewController: UIViewController {
             
             UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "user_uid_key")
 
-            self.performSegue(withIdentifier: "Home", sender: sender)
+            //self.performSegue(withIdentifier: "Home", sender: sender)
 
         })
         

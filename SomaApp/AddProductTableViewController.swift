@@ -44,6 +44,24 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !checkIfUserIsLoggedIn() {
+            let storyboard = UIStoryboard(name: "IsaStoryboard", bundle: nil)
+            // Instantiate the navigation controller
+            let navController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! UINavigationController
+
+            // Get the root view controller of the navigation controller
+            let loginRedirectVC = navController.viewControllers.first as! IsaViewController
+
+            // Set the completion handler for the loginRedirectVC
+            loginRedirectVC.loginCompletionHandler = { [weak self] in
+               // Handle successful login here
+               self?.dismiss(animated: true, completion: nil)
+            }
+
+            // Present the navigation controller
+            self.present(navController, animated: true, completion: nil)
+
+           }
         assignPickerViews()
         
         submitItem.isEnabled = false
@@ -214,7 +232,15 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
         }
     }
 
-
+    func checkIfUserIsLoggedIn() -> Bool {
+       if Auth.auth().currentUser != nil {
+          // User is logged in
+          return true
+       } else {
+          // User is not logged in
+          return false
+       }
+    }
         
         
         

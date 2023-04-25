@@ -36,7 +36,7 @@ class LaunchViewController: UIViewController {
         // Add rotation animation to imageView2
         imageView2.rotate()
         
-        UIView.animate(withDuration: 3, animations: {
+        UIView.animate(withDuration: 2, animations: {
             // do nothing here
             
         }, completion: { done in

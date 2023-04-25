@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class SubmitBidTableViewController: UITableViewController {
 
     @IBOutlet weak var productImageView: UIImageView!
@@ -29,16 +29,31 @@ class SubmitBidTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !checkIfUserIsLoggedIn() {
+            let storyboard = UIStoryboard(name: "IsaStoryboard", bundle: nil)
+            // Instantiate the navigation controller
+            let navController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! UINavigationController
+
+            // Get the root view controller of the navigation controller
+            let loginRedirectVC = navController.viewControllers.first as! IsaViewController
+
+            // Set the completion handler for the loginRedirectVC
+            loginRedirectVC.loginCompletionHandler = { [weak self] in
+               // Handle successful login here
+               self?.dismiss(animated: true, completion: nil)
+            }
+
+            // Present the navigation controller
+            self.present(navController, animated: true, completion: nil)
+
+           }
+        
         submitBid.isEnabled = false
         
-        let imageUuid = "tissotWatch.png"
-        ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
-            if let error = error {
-                print("Error downloading image: \(error.localizedDescription)")
-            } else if let image = image {
-                self?.productImageView.image = image
-            }
-        }
+        
+        productImageView.image = UIImage(named: "tissotWatch")
+          
     
         Database.Products["-NSs7VtqFlA-Ef7pKJ7u/productName"].getData { error, snapshotProductName in
             guard error == nil else {
@@ -84,7 +99,7 @@ class SubmitBidTableViewController: UITableViewController {
         // Countdown
         let calendar = Calendar.current
         // Set the end date based on the selected duration
-        endDate = Date().addingTimeInterval(getTimeInterval(forDuration: .threeDays))
+        endDate = Date().addingTimeInterval(getTimeInterval(forDuration: .oneHour))
         
         // Set up date formatter
         dateFormatter.dateFormat = "HH:mm:ss"
@@ -175,10 +190,22 @@ class SubmitBidTableViewController: UITableViewController {
     
     var validated = false {
         didSet {
-            setBidTextField.text = validated ? "\(setBidTextField.text!)" : "false"
-            submitBid.isEnabled = validated
+            if validated {
+                // Check if the text field value is a valid integer greater than or equal to 130
+                if let bid = Int(setBidTextField.text ?? ""), bid >= 130 {
+                    setBidTextField.text = "\(bid)"
+                    submitBid.isEnabled = true
+                } else {
+                    setBidTextField.text = "false"
+                    submitBid.isEnabled = false
+                }
+            } else {
+                setBidTextField.text = "false"
+                submitBid.isEnabled = false
+            }
         }
     }
+
     
     @IBAction func setBidTextFieldEditingChanged(_ sender: UITextField) {
         submitBid.isEnabled = !sender.text!.isEmpty
@@ -204,7 +231,15 @@ class SubmitBidTableViewController: UITableViewController {
                 }
             }
         }
-     
+    func checkIfUserIsLoggedIn() -> Bool {
+       if Auth.auth().currentUser != nil {
+          // User is logged in
+          return true
+       } else {
+          // User is not logged in
+          return false
+       }
+    }
 }
 
 
