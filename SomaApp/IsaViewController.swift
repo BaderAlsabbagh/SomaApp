@@ -68,8 +68,6 @@ class IsaViewController: UIViewController {
 //        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
 //        notificationCenter.add(request)
 //    }
-
-    
     
     
     @IBOutlet var usernameField: UITextField!
@@ -105,7 +103,7 @@ class IsaViewController: UIViewController {
             
             UserDefaults.standard.set(Auth.auth().currentUser!.uid, forKey: "user_uid_key")
 
-            //self.performSegue(withIdentifier: "Home", sender: sender)
+            self.performSegue(withIdentifier: "Home", sender: sender)
 
         })
         
