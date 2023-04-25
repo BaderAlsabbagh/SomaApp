@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fea-h5-n96">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fea-h5-n96">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Women Categories View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="womenCategories" id="Y6W-OH-hqX" customClass="WomenCategoriesViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="1900" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Men Categories View Controller-->
         <scene sceneID="gxb-DM-nDP">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="AiY-6L-4ER" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menCategories" modalPresentationStyle="fullScreen" id="AiY-6L-4ER" customClass="MenCategoriesViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WSh-Nw-iBA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -785,7 +786,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="D78-St-zYQ">
-                                <rect key="frame" x="181" y="491.00000000000006" width="132.33333333333337" height="55.333333333333314"/>
+                                <rect key="frame" x="181" y="491.00000000000011" width="132.33333333333337" height="55.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 02:45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-gV-Adi">
                                         <rect key="frame" x="0.0" y="0.0" width="39.666666666666664" height="15.666666666666666"/>
@@ -1230,7 +1231,7 @@
         <image name="portrait-handsome-smiling-stylish-young-man_158538-19391.jpg_11zon" width="2000" height="1333"/>
         <image name="shoe1" width="441" height="441"/>
         <image name="shoe2" width="788" height="788"/>
-        <image name="tissotWatch" width="762" height="1016"/>
+        <image name="tissotWatch" width="662" height="662"/>
         <image name="watch1" width="609" height="609"/>
         <image name="watch2" width="828" height="828"/>
         <image name="watchblack" width="828" height="828"/>

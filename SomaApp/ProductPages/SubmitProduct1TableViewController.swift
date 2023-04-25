@@ -1,5 +1,5 @@
 //
-//  StartBidTableViewController.swift
+//  SubmitBidTableViewController.swift
 //  SomaApp
 //
 //  Created by iOSdev on 10/04/2023.
@@ -7,28 +7,29 @@
 
 import UIKit
 
-class StartBidTableViewController: UITableViewController {
-    
+class SubmitProduct1TableViewController: UITableViewController {
+
     @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var setBidTextField: UITextField!
+    
     @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var productDescriptionLabel: UILabel!
+    @IBOutlet weak var submitBid: UIButton!
     @IBOutlet weak var currentBidLabel: UILabel!
+    @IBOutlet weak var latestBidLabel: UILabel!
     @IBOutlet weak var timeLeftLabel: UILabel!
     
     let calendar = Calendar.current
     let dateFormatter = DateFormatter()
     var endDate: Date?
     var countdownTimer: Timer?
+    //    if let setBidTextfield.text as? Int {
+    //        let setBidValue = setBidTextField.text
+    //    }
     
-    //    override func viewWillAppear(_ animated: Bool) {
-    //        currentBidLabel.text = UpdateBid.updatedBid.bid
-    //    }
-    //    override func viewDidDisappear(_ animated: Bool) {
-    //        currentBidLabel.text = UpdateBid.updatedBid.bid
-    //    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        submitBid.isEnabled = false
         
         let imageUuid = "tissotWatch.png"
         ImportImage.shared.downloadImage(imageUuid: imageUuid) { [weak self] (image, error) in
@@ -38,6 +39,7 @@ class StartBidTableViewController: UITableViewController {
                 self?.productImageView.image = image
             }
         }
+    
         Database.Products["-NSs7VtqFlA-Ef7pKJ7u/productName"].getData { error, snapshotProductName in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -48,16 +50,7 @@ class StartBidTableViewController: UITableViewController {
                 self.productNameLabel.text = snapshotProductName
             }
         }
-        Database.Products["-NSs7VtqFlA-Ef7pKJ7u/description"].getData { error, snapshotDescription in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return;
-            }
-            if let snapshotDescription = snapshotDescription?.value as? String {
-                
-                self.productDescriptionLabel.text = snapshotDescription
-            }
-        }
+        
         Database.Products["-NSs7VtqFlA-Ef7pKJ7u/currentBid"].getData { error, snapshotCurrentBid in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -66,10 +59,9 @@ class StartBidTableViewController: UITableViewController {
             if let snapshotCurrentBid = snapshotCurrentBid?.value as? String {
                 
                 self.currentBidLabel.text = snapshotCurrentBid + " BHD"
+                self.latestBidLabel.text = snapshotCurrentBid + " BHD"
             }
         }
-        
-        // Bid updater
         // Create a database reference
         let productRef = Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u")
         
@@ -81,15 +73,14 @@ class StartBidTableViewController: UITableViewController {
         
             let productName = productData["productName"] as? String ?? "N/A"
             self.productNameLabel.text = "\(productName)"
-         
-            let productDescription = productData["description"] as? String ?? "N/A"
-            self.productDescriptionLabel.text = productDescription
+            // Get the latest bid and update the label
+            let latestBid = productData["latestBid"] as? String ?? "N/A"
+            self.latestBidLabel.text = "\(latestBid) BHD"
             
             // Get the current bid and update the label
             let currentBid = productData["currentBid"] as? String ?? "N/A"
             self.currentBidLabel.text = "\(currentBid) BHD"
         }
-        
         // Countdown
         let calendar = Calendar.current
         // Set the end date based on the selected duration
@@ -156,14 +147,65 @@ class StartBidTableViewController: UITableViewController {
         case sevenDays
     }
     
+        // Do any additional setup after loading the view.
     
     
-    @IBAction func unwindToBidView(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source
-        // Use data from the view controller which initiated the unwind segue
+//    override func viewDidDisappear(_ animated: Bool) {
+//        UpdateBid.updatedBid.bid = "5"
+//    }
+    @IBAction func submitBidButtonPressed(_ sender: Any) {
+        
+        let alert = UIAlertController(
+            title: "Submit Bid",
+            message: "Are you sure you want to submit the bid?",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+            UpdateBid.updatedBid.bid = self.currentBidLabel.text!
+            self.saveBidToFirebase()
+            self.performSegue(withIdentifier: "toStartBid", sender: nil)
+        })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        
+        self.present(alert, animated: true)
+        return
     }
+    
+    
+    var validated = false {
+        didSet {
+            setBidTextField.text = validated ? "\(setBidTextField.text!)" : "false"
+            submitBid.isEnabled = validated
+        }
+    }
+    
+    @IBAction func setBidTextFieldEditingChanged(_ sender: UITextField) {
+        submitBid.isEnabled = !sender.text!.isEmpty
+    }
+    
+    // Save Set Bid
+    func saveBidToFirebase() {
+        let bidData = [
+            "currentBid": setBidTextField.text,
+            "latestBid": setBidTextField.text
+        ]
+        // Create a database reference
+
+        // Save the data to the new child node
+        let productRef = Database.Products.products.child("-NSs7VtqFlA-Ef7pKJ7u")
+            
+            // Update the values of the existing product node with the new bid data
+            productRef.updateChildValues(bidData) { (error, ref) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                } else {
+                    print("Data updated successfully!")
+                }
+            }
+        }
+     
 }
-   
 
 
 
@@ -236,7 +278,7 @@ class StartBidTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -264,5 +306,4 @@ class StartBidTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 

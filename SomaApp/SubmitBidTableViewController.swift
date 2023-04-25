@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 class SubmitBidTableViewController: UITableViewController {
 
     @IBOutlet weak var productImageView: UIImageView!
@@ -29,6 +29,26 @@ class SubmitBidTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if !checkIfUserIsLoggedIn() {
+            let storyboard = UIStoryboard(name: "IsaStoryboard", bundle: nil)
+            // Instantiate the navigation controller
+            let navController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! UINavigationController
+
+            // Get the root view controller of the navigation controller
+            let loginRedirectVC = navController.viewControllers.first as! IsaViewController
+
+            // Set the completion handler for the loginRedirectVC
+            loginRedirectVC.loginCompletionHandler = { [weak self] in
+               // Handle successful login here
+               self?.dismiss(animated: true, completion: nil)
+            }
+
+            // Present the navigation controller
+            self.present(navController, animated: true, completion: nil)
+
+           }
+        
         submitBid.isEnabled = false
         
         let imageUuid = "tissotWatch.png"
@@ -84,7 +104,7 @@ class SubmitBidTableViewController: UITableViewController {
         // Countdown
         let calendar = Calendar.current
         // Set the end date based on the selected duration
-        endDate = Date().addingTimeInterval(getTimeInterval(forDuration: .threeDays))
+        endDate = Date().addingTimeInterval(getTimeInterval(forDuration: .oneHour))
         
         // Set up date formatter
         dateFormatter.dateFormat = "HH:mm:ss"
@@ -204,7 +224,15 @@ class SubmitBidTableViewController: UITableViewController {
                 }
             }
         }
-     
+    func checkIfUserIsLoggedIn() -> Bool {
+       if Auth.auth().currentUser != nil {
+          // User is logged in
+          return true
+       } else {
+          // User is not logged in
+          return false
+       }
+    }
 }
 
 
