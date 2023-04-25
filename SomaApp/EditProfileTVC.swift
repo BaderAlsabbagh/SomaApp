@@ -60,25 +60,38 @@ class EditProfileTVC: UITableViewController, UIPickerViewDataSource, UIPickerVie
                     "Gender":genders[gender.selectedRow(inComponent: 0)],
                     "Mobile": MobileText,
                     "Address": AddressText]
-        
-        // Create a database reference
-        let databaseRef = Database.Products.products.childByAutoId()
-        
-        // Create a child reference for "products" node
-        let profileRef = databaseRef
-        
-        // Set the values to be saved in the database
-        //data = ["name": name, "email": email]
-        
-        // Save the data to the new child node
-        profileRef.setValue(data) { (error, ref) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-            } else {
-                print("Data saved successfully!")
+     
+
+            // Show an alert that the information has been saved
+            let alertController = UIAlertController(title: "Information Saved", message: "Your information has been saved.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+                // Go back to the previous page
+                self.navigationController?.popViewController(animated: true)
             }
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
         }
+
+        // Create a database reference
+        let databaseRef = Database.Users.users.childByAutoId()
+        
+//        // Create a child reference for "products" node
+//        let profileRef = databaseRef
+//
+//        // Set the values to be saved in the database
+//        //data = ["name": name, "email": email]
+//
+//        // Save the data to the new child node
+//        profileRef.setValue(data) { (error, ref) in
+//            if let error = error {
+//                print("Error: \(error.localizedDescription)")
+//            } else {
+//                print("Data saved successfully!")
+//            }
+//        }
     }
+    
+    
     
     
     
@@ -151,4 +164,4 @@ class EditProfileTVC: UITableViewController, UIPickerViewDataSource, UIPickerVie
     
     
     //}
-}
+
