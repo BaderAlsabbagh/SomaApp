@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="-191" y="-164"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="aqc-hm-wRa">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Nkx-fE-xkF" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarID" automaticallyAdjustsScrollViewInsets="NO" id="Nkx-fE-xkF" customClass="TabBarViewController" customModule="SomaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PJr-EY-bZm">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
