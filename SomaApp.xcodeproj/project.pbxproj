@@ -24,6 +24,8 @@
 		6A410A5829D1BCE00010CA31 /* RaneemStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A410A5729D1BCE00010CA31 /* RaneemStoryboard.storyboard */; };
 		6A410A5A29D1BCEE0010CA31 /* GhadeerStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */; };
 		6A410A5C29D1BCFD0010CA31 /* IsaStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */; };
+		6A6CE5FD29F707E700D5A9E5 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6CE5FC29F707E700D5A9E5 /* LaunchViewController.swift */; };
+		6A6CE5FF29F72E8F00D5A9E5 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6CE5FE29F72E8F00D5A9E5 /* TabBarViewController.swift */; };
 		6A6D6C3C29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */; };
 		6A6D6C3E29E3B07D00C45433 /* DatabaseTestingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */; };
 		6A6D6C4029E3B3D700C45433 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6D6C3F29E3B3D700C45433 /* Database.swift */; };
@@ -79,6 +81,8 @@
 		6A410A5729D1BCE00010CA31 /* RaneemStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RaneemStoryboard.storyboard; sourceTree = "<group>"; };
 		6A410A5929D1BCEE0010CA31 /* GhadeerStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GhadeerStoryboard.storyboard; sourceTree = "<group>"; };
 		6A410A5B29D1BCFD0010CA31 /* IsaStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IsaStoryboard.storyboard; sourceTree = "<group>"; };
+		6A6CE5FC29F707E700D5A9E5 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		6A6CE5FE29F72E8F00D5A9E5 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		6A6D6C3B29E3B05100C45433 /* DatabaseTestingStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DatabaseTestingStoryboard.storyboard; sourceTree = "<group>"; };
 		6A6D6C3D29E3B07D00C45433 /* DatabaseTestingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTestingViewController.swift; sourceTree = "<group>"; };
 		6A6D6C3F29E3B3D700C45433 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			children = (
 				6A0BCC5E29F163AF000B7787 /* ProfileTableViewController.swift */,
 				6A8972AE29DDB958000B84E2 /* Main.storyboard */,
+				6A6CE5FE29F72E8F00D5A9E5 /* TabBarViewController.swift */,
 				6AB0579A29F0C18700CF985F /* BidingListingsStoryboard.storyboard */,
 				6AB0579D29F0C1A400CF985F /* Bidding.swift */,
 				6AB0579C29F0C1A400CF985F /* BiddingListingViewController.swift */,
@@ -220,6 +225,7 @@
 				6ADA84D129D06FBA00DB1DB6 /* Assets.xcassets */,
 				6A89729929DDB8F1000B84E2 /* LogosAssets.xcassets */,
 				6ADA84D329D06FBA00DB1DB6 /* LaunchScreen.storyboard */,
+				6A6CE5FC29F707E700D5A9E5 /* LaunchViewController.swift */,
 				6ADA84D629D06FBA00DB1DB6 /* Info.plist */,
 				6A410A5329D07D540010CA31 /* GoogleService-Info.plist */,
 			);
@@ -327,8 +333,10 @@
 				6AD054B929E7989F00039CC2 /* CollectionViewCell.swift in Sources */,
 				6A0BCC6329F16A9E000B7787 /* Item.swift in Sources */,
 				6AB0579F29F0C1A400CF985F /* Bidding.swift in Sources */,
+				6A6CE5FD29F707E700D5A9E5 /* LaunchViewController.swift in Sources */,
 				6AB0579E29F0C1A400CF985F /* BiddingListingViewController.swift in Sources */,
 				6ADA84C929D06FB800DB1DB6 /* AppDelegate.swift in Sources */,
+				6A6CE5FF29F72E8F00D5A9E5 /* TabBarViewController.swift in Sources */,
 				6A6D6C4229E4527C00C45433 /* StartBidTableViewController.swift in Sources */,
 				6AD054BC29E7989F00039CC2 /* TableViewCell.swift in Sources */,
 				6AC64B8829F2849C0063D727 /* MenCategoriesViewController.swift in Sources */,
@@ -495,6 +503,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SomaApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Soma;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -522,6 +531,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SomaApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Soma;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
