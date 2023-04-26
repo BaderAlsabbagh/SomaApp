@@ -48,7 +48,26 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if !checkIfUserIsLoggedIn() {
+            let storyboard = UIStoryboard(name: "IsaStoryboard", bundle: nil)
+            // Instantiate the navigation controller
+            let navController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! UINavigationController
+            
+            // Get the root view controller of the navigation controller
+            let loginRedirectVC = navController.viewControllers.first as! IsaViewController
+
+            // Set the completion handler for the loginRedirectVC
+            loginRedirectVC.loginCompletionHandler = { [weak self] in
+               // Handle successful login here
+               self?.dismiss(animated: true, completion: nil)
+            }
+
+            // Present the navigation controller
+            self.present(navController, animated: true, completion: nil)
+            navController.modalTransitionStyle = .crossDissolve
+            navController.modalPresentationStyle = .fullScreen
+            
+           }
         checkForPersmission()
         
         contenMode.delegate = self
@@ -144,7 +163,7 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
     @objc func buttonTapped(sender: UIButton) {
         print("Button tapped for item \(sender.tag)")
         // Perform segue or other actions as needed
-        if sender.tag != 2 {
+        if sender.tag != 1 {
             let ghadeerStoryboard = UIStoryboard(name: "GhadeerStoryboard", bundle: nil)
             guard let womenCategoriesVC = ghadeerStoryboard.instantiateViewController(withIdentifier: "womenCategories") as? WomenCategoriesViewController else {
                 print("shouldnt push")
@@ -153,9 +172,9 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
             print("should push")
             present(womenCategoriesVC, animated: true, completion: nil)
         }
-        if sender.tag == 2 {
+        if sender.tag == 1 {
             let ghadeerStoryboard = UIStoryboard(name: "GhadeerStoryboard", bundle: nil)
-            guard let menCategoriesVC = ghadeerStoryboard.instantiateViewController(withIdentifier: "menCategories") as? MenCategoriesViewController else {
+            guard let menCategoriesVC = ghadeerStoryboard.instantiateViewController(withIdentifier: "womenSunglassesCategories") as? MenCategoriesViewController else {
                 print("shouldnt push")
                 return
             }
@@ -196,8 +215,8 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
         let identifier = "Soma App notification"
         let title = "Soma"
         let body = "New products have been listed, bid now!"
-        let hour = 15
-        let minute = 54
+        let hour = 3
+        let minute = 07
         let isDaily = true
         
         let notificationCenter = UNUserNotificationCenter.current()
@@ -348,5 +367,14 @@ class HomeTableViewController: UITableViewController, UICollectionViewDelegate, 
                 }.resume()
             }
         }
+    }
+    func checkIfUserIsLoggedIn() -> Bool {
+       if Auth.auth().currentUser != nil {
+          
+          return true
+       } else {
+          // User is not logged in
+          return false
+       }
     }
 }

@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
         
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        self.navigationController?.navigationBar.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -27,8 +28,8 @@ class HomeViewController: UIViewController {
         }
         
         if UserDefaults.standard.object(forKey: "user_uid_key") == nil {
-            let storyboard = UIStoryboard(name: "IsaStoryboard", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "login") as! IsaViewController
+            let storyboard = UIStoryboard(name: "HomepageStoryboard", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "HomeTableViewControllerID") as! HomeTableViewController
 
             
             //navigationController?.popToRootViewController(animated: true)

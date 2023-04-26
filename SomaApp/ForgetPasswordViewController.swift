@@ -14,7 +14,7 @@ class ForgotPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sendButton.layer.cornerRadius = 20
-        
+        self.navigationController?.navigationBar.isHidden = false
         // Do any additional setup after loading the view.
     }
     
