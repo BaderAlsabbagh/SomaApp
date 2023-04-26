@@ -44,11 +44,14 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        assignPickerViews()
+        
+        submitItem.isEnabled = false
         if !checkIfUserIsLoggedIn() {
             let storyboard = UIStoryboard(name: "IsaStoryboard", bundle: nil)
             // Instantiate the navigation controller
             let navController = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! UINavigationController
-
+            
             // Get the root view controller of the navigation controller
             let loginRedirectVC = navController.viewControllers.first as! IsaViewController
 
@@ -60,12 +63,10 @@ class AddProductTableViewController: UITableViewController, UIImagePickerControl
 
             // Present the navigation controller
             self.present(navController, animated: true, completion: nil)
-
+            navController.modalTransitionStyle = .crossDissolve
+            navController.modalPresentationStyle = .fullScreen
+            
            }
-        assignPickerViews()
-        
-        submitItem.isEnabled = false
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

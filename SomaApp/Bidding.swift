@@ -12,7 +12,6 @@ import UIKit
 struct Bidding {
     var image: UIImage 
     var title: String
-    var currentBid: String
     var yourBid: String
 }
 

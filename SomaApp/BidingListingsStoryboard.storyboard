@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yo-3Q-emj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9yo-3Q-emj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -27,13 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your bid: BD 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLY-ho-wlH">
-                                                    <rect key="frame" x="247" y="44" width="126" height="21"/>
-                                                    <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current bid: BD 17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD9-pX-RuP">
-                                                    <rect key="frame" x="247" y="73" width="126" height="21"/>
+                                                    <rect key="frame" x="266" y="44" width="107" height="21"/>
                                                     <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -54,20 +49,15 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZLY-ho-wlH" secondAttribute="bottom" constant="40" id="5Qn-lB-hPp"/>
                                                 <constraint firstItem="ZLY-ho-wlH" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="44" id="6bV-an-afI"/>
                                                 <constraint firstItem="M5J-bm-lJp" firstAttribute="leading" secondItem="p5Q-pn-U0f" secondAttribute="leading" id="8Pj-V2-QQp"/>
-                                                <constraint firstItem="cD9-pX-RuP" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" constant="73" id="B9N-Ca-eol"/>
-                                                <constraint firstAttribute="trailing" secondItem="cD9-pX-RuP" secondAttribute="trailing" constant="20" symbolic="YES" id="DzE-uI-3l6"/>
                                                 <constraint firstItem="M5J-bm-lJp" firstAttribute="centerY" secondItem="p5Q-pn-U0f" secondAttribute="centerY" id="IDk-8r-Cpu"/>
                                                 <constraint firstItem="ZLY-ho-wlH" firstAttribute="leading" secondItem="M5J-bm-lJp" secondAttribute="trailing" constant="100" id="Xn9-MZ-WNi"/>
                                                 <constraint firstItem="Ame-sh-VO0" firstAttribute="top" secondItem="p5Q-pn-U0f" secondAttribute="top" id="bmN-gs-2RJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZLY-ho-wlH" secondAttribute="trailing" constant="20" symbolic="YES" id="dWf-Mt-E0n"/>
                                                 <constraint firstAttribute="bottom" secondItem="Ame-sh-VO0" secondAttribute="bottom" constant="80" id="fF3-OX-ykP"/>
-                                                <constraint firstAttribute="bottom" secondItem="cD9-pX-RuP" secondAttribute="bottom" constant="11" id="pFM-vD-bqG"/>
-                                                <constraint firstItem="cD9-pX-RuP" firstAttribute="leading" secondItem="M5J-bm-lJp" secondAttribute="trailing" constant="100" id="saR-AK-bBh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="biddingImage" destination="M5J-bm-lJp" id="BnL-xx-hEP"/>
-                                            <outlet property="currentBid" destination="cD9-pX-RuP" id="K2h-i3-vYp"/>
                                             <outlet property="title" destination="Ame-sh-VO0" id="0qj-mm-G9P"/>
                                             <outlet property="yourBid" destination="ZLY-ho-wlH" id="APh-sO-qLi"/>
                                         </connections>

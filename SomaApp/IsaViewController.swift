@@ -15,7 +15,8 @@ class IsaViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround() 
-      
+        self.navigationController?.navigationBar.isHidden = true
+
 
         
         // Do any additional setup after loading the view.

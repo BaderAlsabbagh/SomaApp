@@ -27,7 +27,7 @@ class ProfileTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //
-//        let ref = FirebaseDatabase.Database.database(url: "https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
+//        let ref = FirebaseDatabase.Database.database(url: //"https://somaapp-a3768-default-rtdb.europe-west1.firebasedatabase.app/").reference()
 //        
 //        ref.child("your_child").observeSingleEvent(of: .value, with: { (snapshot) in
 //            // Get the value of the snapshot
@@ -52,7 +52,11 @@ class ProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+     
     }
+    
+   
 
     // MARK: - Table view data source
 
