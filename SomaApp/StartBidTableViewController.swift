@@ -28,7 +28,7 @@ class StartBidTableViewController: UITableViewController {
     //    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.navigationBar.isHidden = false
         
         
                 productImageView.image = UIImage(named: "tissotWatch")
@@ -83,6 +83,7 @@ class StartBidTableViewController: UITableViewController {
             // Get the current bid and update the label
             let currentBid = productData["currentBid"] as? String ?? "N/A"
             self.currentBidLabel.text = "\(currentBid) BHD"
+            
         }
         
         // Countdown
