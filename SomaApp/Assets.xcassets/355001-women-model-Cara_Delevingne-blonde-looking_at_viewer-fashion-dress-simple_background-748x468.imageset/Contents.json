@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "355001-women-model-Cara_Delevingne-blonde-looking_at_viewer-fashion-dress-simple_background-748x468.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
